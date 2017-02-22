@@ -910,6 +910,7 @@ GameObject:
   - component: {fileID: 384612592}
   - component: {fileID: 384612593}
   - component: {fileID: 384612594}
+  - component: {fileID: 384612595}
   m_Layer: 0
   m_Name: DeLorean
   m_TagString: Player
@@ -1131,6 +1132,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efe89841e508ed542a507f66b95bd540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &384612595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 384612584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37adb92d4fc6f1345b050cedb7dcffa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &398995050
