@@ -9,7 +9,6 @@ public class Camera_Shake : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         mainCam = Camera.main;
-        AddShake(10, 1000000);
 	}
 	
 	// Update is called once per frame
