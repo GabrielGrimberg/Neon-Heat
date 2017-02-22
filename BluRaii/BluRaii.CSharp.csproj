@@ -81,6 +81,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Camera_Shake.cs" />
     <Compile Include="Assets\Scripts\City_Duplicator.cs" />
     <Compile Include="Assets\Scripts\Laser_Precursor.cs" />
     <Compile Include="Assets\Scripts\Laser_Spawner.cs" />
