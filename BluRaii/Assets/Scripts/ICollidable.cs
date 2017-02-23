@@ -1,0 +1,3 @@
+﻿interface ICollidable {
+    void Collide();
+}

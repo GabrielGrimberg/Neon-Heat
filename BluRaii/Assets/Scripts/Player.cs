@@ -109,6 +109,12 @@ public class Player : MonoBehaviour {
         if (other.tag == "Pillar" || other.tag == "Rocket") {
             rb.AddRelativeForce(Vector3.forward * 2000, ForceMode.VelocityChange);
             Info.getCameraShake().AddShake(20, 0.2f);
+
+
+            ICollidable collidable = other.GetComponent<ICollidable>();
+            if (collidable != null) {
+                collidable.Collide();
+            }
         }
     }
 

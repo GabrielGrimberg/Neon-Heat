@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pop_Up_Pillar : MonoBehaviour {
+public class Pop_Up_Pillar : MonoBehaviour, ICollidable {
     GameObject warningSign;
     Vector3 spawnPosition;
     GameObject player;
@@ -42,12 +42,16 @@ public class Pop_Up_Pillar : MonoBehaviour {
     }
 
     public static void Spawn() {
-        GameObject rocket = Instantiate(Resources.Load("pop_up_pillar"), Vector3.zero, Quaternion.identity) as GameObject;
+        GameObject pillar = Instantiate(Resources.Load("pop_up_pillar"), Vector3.zero, Quaternion.identity) as GameObject;
     }
 
     void RaisePillar() {
         transform.position = spawnPosition + Vector3.down * 750;
         spawn = true;
         warningSign.SetActive(false);
+    }
+
+    public void Collide() {
+        Destroy(gameObject);
     }
 }

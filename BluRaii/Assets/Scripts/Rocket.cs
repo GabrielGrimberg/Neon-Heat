@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rocket : MonoBehaviour {
+public class Rocket : MonoBehaviour, ICollidable {
     public Vector3 startPosition;
     public Vector3 endPosition;
 
@@ -21,5 +21,9 @@ public class Rocket : MonoBehaviour {
     public static void spawn(Vector3 startPosition, Vector3 endPosition) {
         GameObject rocket = Instantiate(Resources.Load("rocketA"), startPosition, Quaternion.identity) as GameObject;
         rocket.GetComponent<Rocket>().endPosition = endPosition;
+    }
+
+    public void Collide() {
+        Destroy(gameObject);
     }
 }

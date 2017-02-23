@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Player class
 public class Player : MonoBehaviour {
     Rigidbody rb;
     float horizontalSpeed = 0;
