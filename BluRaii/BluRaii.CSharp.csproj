@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TestShader.shader" />
+    <None Include="Assets\VHSEffect.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

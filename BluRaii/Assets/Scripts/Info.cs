@@ -13,4 +13,8 @@ public class Info {
     public static Camera_Shake getCameraShake() {
         return GameObject.FindGameObjectWithTag("Player").GetComponent<Camera_Shake>();
     }
+
+    public static DistortImageEffect getDistortImageEffects() {
+        return Camera.main.GetComponent<DistortImageEffect>();
+    }
 }

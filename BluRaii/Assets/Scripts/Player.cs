@@ -115,6 +115,8 @@ public class Player : MonoBehaviour {
             if (collidable != null) {
                 collidable.Collide();
             }
+
+            Info.getDistortImageEffects().offsetColor = 0.2f;
         }
     }
 
