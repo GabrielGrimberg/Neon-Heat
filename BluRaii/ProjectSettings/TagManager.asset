@@ -7,6 +7,7 @@ TagManager:
   - Pillar
   - Rocket
   - CameraShake
+  - CameraShake
   layers:
   - Default
   - TransparentFX

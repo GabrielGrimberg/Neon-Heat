@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\AccelServer.cs" />
     <Compile Include="Assets\Scripts\Camera_Shake.cs" />
     <Compile Include="Assets\Scripts\City_Duplicator.cs" />
+    <Compile Include="Assets\Scripts\DoubleTap.cs" />
     <Compile Include="Assets\Scripts\Helper.cs" />
     <Compile Include="Assets\Scripts\Info.cs" />
     <Compile Include="Assets\Scripts\Laser_Precursor.cs" />
