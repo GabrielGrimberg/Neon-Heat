@@ -12,7 +12,7 @@ public class Camera_Shake : MonoBehaviour{
 	// Use this for initialization
 	void Start () {
         camShake = GameObject.FindGameObjectWithTag("CameraShake");
-        AddShake(1.5f, 2000000); //This is the background shake, but it should be a special case.
+        //AddShake(1.5f, 2000000); //This is the background shake, but it should be a special case.
     }
 	
 	// Update is called once per frame

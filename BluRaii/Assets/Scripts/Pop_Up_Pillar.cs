@@ -16,7 +16,8 @@ public class Pop_Up_Pillar : MonoBehaviour, ICollidable {
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
 
-        offset = new Vector3(Random.Range(-1000, 1000), 0, Random.Range(-2000, -20000));
+        //offset = new Vector3(Random.Range(-1000, 1000), 0, Random.Range(-2000, -20000));
+        offset = new Vector3(Random.Range(-1600, 1600), 0, Random.Range(-10000, -20000));
         spawnPosition = new Vector3(City_Duplicator.cityStart.x, City_Duplicator.cityStart.y, player.transform.position.z) + offset;
 
         warningSign = Instantiate(Resources.Load("warning_sign"), Vector3.zero, Quaternion.identity) as GameObject;

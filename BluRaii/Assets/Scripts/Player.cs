@@ -16,6 +16,7 @@ public class Player : MonoBehaviour {
     //float maxHorizontalSpeed = 5000;
     float bonusHorizontalSpeed = 0;
     float boostHorizontalSpeed = 0;
+	float accelData = 0;
 
     public Text hSpeed;
     public Text tSpeed;
@@ -23,9 +24,14 @@ public class Player : MonoBehaviour {
     DoubleTap aDoubleTap;
     DoubleTap bDoubleTap;
 
+	UDPSend sendObj;
+
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
+
+		sendObj = new UDPSend();
+		sendObj.init();
 
         aDoubleTap = new DoubleTap(KeyCode.A, 0.2f, DashLeft);
         bDoubleTap = new DoubleTap(KeyCode.D, 0.2f, DashRight);
@@ -36,6 +42,10 @@ public class Player : MonoBehaviour {
 	void Update () {
         aDoubleTap.Update();
         bDoubleTap.Update();
+
+		//Get data from UDPRecieve script for X value of acceleromter on app
+		float.TryParse (UDPReceive.lastReceivedUDPPacket, out accelData);
+		//Debug.Log(accelData);
 
         //Accelerate the car initally.
         if(rb.velocity.z > -10000) {
@@ -52,13 +62,21 @@ public class Player : MonoBehaviour {
         boostHorizontalSpeed = Mathf.Lerp(boostHorizontalSpeed, 0, Time.deltaTime / 0.1f);
 
         //Input keyboard code.
-        if (Input.GetKey(KeyCode.D)) {
-            currentHorizontalSpeed = Mathf.Lerp(currentHorizontalSpeed, -maxHorizontalSpeed + -bonusHorizontalSpeed + -boostHorizontalSpeed, Time.deltaTime / 0.2f);
+		if (accelData > 0.12) {
+			currentHorizontalSpeed = Mathf.Lerp(currentHorizontalSpeed, (accelData*10000) * -1 + -bonusHorizontalSpeed + -boostHorizontalSpeed, Time.deltaTime / 0.2f);
         }
 
-        if (Input.GetKey(KeyCode.A)) {
-            currentHorizontalSpeed = Mathf.Lerp(currentHorizontalSpeed, maxHorizontalSpeed + bonusHorizontalSpeed + boostHorizontalSpeed, Time.deltaTime / 0.2f);
+		if (accelData < - 0.12) {
+			currentHorizontalSpeed = Mathf.Lerp(currentHorizontalSpeed, (accelData*10000) * -1 + bonusHorizontalSpeed + boostHorizontalSpeed, Time.deltaTime / 0.2f);
         }
+
+		if (Input.GetKey(KeyCode.D)) {
+			currentHorizontalSpeed = Mathf.Lerp(currentHorizontalSpeed, -maxHorizontalSpeed + -bonusHorizontalSpeed + -boostHorizontalSpeed, Time.deltaTime / 0.2f);
+		}
+
+		if (Input.GetKey(KeyCode.A)) {
+			currentHorizontalSpeed = Mathf.Lerp(currentHorizontalSpeed, maxHorizontalSpeed + bonusHorizontalSpeed + boostHorizontalSpeed, Time.deltaTime / 0.2f);
+		}
 
 		//If none of the buttons are pressed, lerp to 0 on horizontal speed.
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A)) {
@@ -67,13 +85,13 @@ public class Player : MonoBehaviour {
 
 
 		//Check lane boundaries
-        if (transform.position.x < -3400) {
-            transform.position = new Vector3(-3400, transform.position.y, transform.position.z);
+        if (transform.position.x < -3800) {
+            transform.position = new Vector3(-3800, transform.position.y, transform.position.z);
             currentHorizontalSpeed = 0;
         }
 
-        if (transform.position.x > -1070) {
-            transform.position = new Vector3(-1070, transform.position.y, transform.position.z);
+        if (transform.position.x > -630) {
+            transform.position = new Vector3(-630, transform.position.y, transform.position.z);
             currentHorizontalSpeed = 0;
         }
 
@@ -110,13 +128,14 @@ public class Player : MonoBehaviour {
             rb.AddRelativeForce(Vector3.forward * 2000, ForceMode.VelocityChange);
             Info.getCameraShake().AddShake(20, 0.2f);
 
+			sendObj.sendString("crashed");
 
             ICollidable collidable = other.GetComponent<ICollidable>();
             if (collidable != null) {
                 collidable.Collide();
             }
 
-            Info.getDistortImageEffects().offsetColor = 0.2f;
+			Info.getDistortImageEffects().Quake();
         }
     }
 

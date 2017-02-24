@@ -10,10 +10,12 @@ Shader "Hidden/VHSeffect"
 		_OffsetNoiseY("Offset Noise Y", float) = 0
 		_OffsetPosY("Offset position Y", float) = 0.0
 		_OffsetColor("Offset Color", Range(0.005, 0.1)) = 0.001
-		//_OffsetDistortion("Offset Distortion", float) = 500
-		_OffsetDistortion("Offset Distortion", float) = 2000
+		//_OffsetDistortion("Offset Distortion", float) = 2000
+		_OffsetDistortion("Offset Distortion", float) = 900000
 		_Intensity("Mask Intensity", Range(0.0, 1)) = 0.64
 		_Opacity("Secondary Texture Opacity", Range(0.0, 1)) = 0.2
+		_OffsetDirectionX("Offset Direction X", Float) = 1
+		_OffsetDirectionY("Offset Direction Y", Float) = 1
 	}
 		SubShader
 	{
@@ -55,15 +57,17 @@ Shader "Hidden/VHSeffect"
 	half _OffsetPosY;
 	half _OffsetDistortion;
 	float _Opacity;
+	float _OffsetDirectionX;
+	float _OffsetDirectionY;
 
 	fixed4 frag(v2f i) : SV_Target
 	{
 		i.uv = float2(frac(i.uv.x + cos((i.uv.y + _CosTime.y) * 100) / _OffsetDistortion), frac(i.uv.y + _OffsetPosY));
 
 		fixed4 col = tex2D(_MainTex, i.uv);
-		col.g = tex2D(_MainTex, i.uv + float2(_OffsetColor, _OffsetColor)).g;
-		col.b = tex2D(_MainTex, i.uv + float2(-_OffsetColor, -_OffsetColor)).b;
-		col.a = tex2D(_MainTex, i.uv + float2(-_OffsetColor, -_OffsetColor)).a;
+		col.g = tex2D(_MainTex, i.uv + float2(_OffsetColor * _OffsetDirectionX, _OffsetColor * _OffsetDirectionY)).g;
+		col.b = tex2D(_MainTex, i.uv + float2(-_OffsetColor * _OffsetDirectionX, -_OffsetColor * _OffsetDirectionY)).b;
+		col.a = tex2D(_MainTex, i.uv + float2(-_OffsetColor * _OffsetDirectionX, -_OffsetColor * _OffsetDirectionY)).a;
 
 		fixed4 col2 = tex2D(_SecondaryTex, i.uv2);
 		col2.a = _Opacity;

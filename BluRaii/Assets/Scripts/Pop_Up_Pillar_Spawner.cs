@@ -15,7 +15,8 @@ public class Pop_Up_Pillar_Spawner : MonoBehaviour {
 	}
 
     void SpawnPillar() {
-        Invoke("SpawnPillar", Random.Range(0.2f, 0.3f));
+        //Invoke("SpawnPillar", Random.Range(0.2f, 0.3f));
+        Invoke("SpawnPillar", Random.Range(0.8f, 1.5f));
         Pop_Up_Pillar.Spawn();
     }
 }

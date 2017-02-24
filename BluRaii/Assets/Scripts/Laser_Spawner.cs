@@ -12,11 +12,12 @@ public class Laser_Spawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
     void SpawnLaser() {
         GameObject t = Instantiate(trailPrecursor, City_Duplicator.cityEnd, Quaternion.identity);
-        Invoke("SpawnLaser", Random.Range(0.2f, 0.8f));
+        //Invoke("SpawnLaser", Random.Range(0.2f, 0.8f));
+        //Invoke("SpawnLaser", Random.Range(0.8f, 1.6f));
     }
 }

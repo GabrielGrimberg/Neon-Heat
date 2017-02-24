@@ -63,4 +63,11 @@ public class DistortImageEffect : MonoBehaviour {
             Graphics.Blit(src, dst);
         }
     }
+
+	public void Quake() {
+		offsetColor =  Random.Range(0.1f, 0.3f);
+
+		mat.SetFloat("_OffsetDirectionX", Random.Range(-1, 1.0f));
+		mat.SetFloat("_OffsetDirectionY", Random.Range(-1, 1.0f));
+	}
 }
