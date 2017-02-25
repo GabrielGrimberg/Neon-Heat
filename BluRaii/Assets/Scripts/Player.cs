@@ -48,7 +48,7 @@ public class Player : MonoBehaviour {
 		//Debug.Log(accelData);
 
         //Accelerate the car initally.
-        if(rb.velocity.z > -10000) {
+        if(rb.velocity.z > -4000) {
             rb.AddRelativeForce(Vector3.forward * -1000);
         }
 
@@ -137,6 +137,12 @@ public class Player : MonoBehaviour {
 
 			Info.getDistortImageEffects().Quake();
             ObstacleExplosion.Explode(other.transform.position);
+        }
+
+        if (other.tag == "SpeedUpRing") {
+            rb.AddRelativeForce(Vector3.forward * -2000, ForceMode.VelocityChange);
+            Info.getCameraShake().AddShake(40, 0.2f);
+            Info.getDistortImageEffects().Quake();
         }
     }
 

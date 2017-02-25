@@ -8,6 +8,7 @@ TagManager:
   - Rocket
   - CameraShake
   - CameraShake
+  - SpeedUpRing
   layers:
   - Default
   - TransparentFX

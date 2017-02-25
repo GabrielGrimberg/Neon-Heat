@@ -408,7 +408,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7716314b764f9d5409a9dce4f509d312, type: 2}
+  - {fileID: 2100000, guid: 32a3166748cf02342a09cb2b46cfde23, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5143,6 +5143,7 @@ GameObject:
   - component: {fileID: 384612596}
   - component: {fileID: 384612588}
   - component: {fileID: 384612595}
+  - component: {fileID: 384612597}
   m_Layer: 0
   m_Name: DeLorean
   m_TagString: Player
@@ -5390,6 +5391,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 415093648beaa784fbdbdb2abc3cd629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &384612597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 384612584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee0d9dbb80fdf4845858f898387a824c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &398995050
@@ -6136,7 +6148,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fd8b197841a339a4d90e0ad13b3bdf22, type: 2}
+  - {fileID: 2100000, guid: 3bc7e3a265159d0448c67ea9b92d98d4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16736,7 +16748,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7716314b764f9d5409a9dce4f509d312, type: 2}
+  - {fileID: 2100000, guid: 32a3166748cf02342a09cb2b46cfde23, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
