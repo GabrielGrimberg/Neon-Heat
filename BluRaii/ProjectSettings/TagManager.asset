@@ -9,6 +9,7 @@ TagManager:
   - CameraShake
   - CameraShake
   - SpeedUpRing
+  - WheelSmoke
   layers:
   - Default
   - TransparentFX
