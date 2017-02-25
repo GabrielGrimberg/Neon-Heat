@@ -5144,7 +5144,10 @@ GameObject:
   - component: {fileID: 384612588}
   - component: {fileID: 384612595}
   - component: {fileID: 384612597}
+<<<<<<< HEAD
   - component: {fileID: 384612598}
+=======
+>>>>>>> baab324c3e41ca417d50554c385a99dd03d227a5
   m_Layer: 0
   m_Name: DeLorean
   m_TagString: Player
@@ -5405,6 +5408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0d9dbb80fdf4845858f898387a824c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 --- !u!82 &384612598
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5485,6 +5489,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+=======
+>>>>>>> baab324c3e41ca417d50554c385a99dd03d227a5
 --- !u!1 &398995050
 GameObject:
   m_ObjectHideFlags: 0
