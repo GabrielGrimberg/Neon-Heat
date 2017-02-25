@@ -87,7 +87,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\LightChanger.cs" />
+    <Compile Include="Assets\CameraFollow.cs" />
+    <Compile Include="Assets\FollowPlayer.cs" />
     <Compile Include="Assets\Menu Scripts\LevelMananger.cs" />
     <Compile Include="Assets\Scripts\AccelServer.cs" />
     <Compile Include="Assets\Scripts\Camera_Shake.cs" />
@@ -99,16 +100,21 @@
     <Compile Include="Assets\Scripts\Info.cs" />
     <Compile Include="Assets\Scripts\Laser_Precursor.cs" />
     <Compile Include="Assets\Scripts\Laser_Spawner.cs" />
+    <Compile Include="Assets\Scripts\LightChanger.cs" />
+    <Compile Include="Assets\Scripts\ObstacleExplosion.cs" />
+    <Compile Include="Assets\Scripts\Obstacle_Spawner.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PoliceLights.cs" />
     <Compile Include="Assets\Scripts\Pop_Up_Pillar.cs" />
-    <Compile Include="Assets\Scripts\Pop_Up_Pillar_Spawner.cs" />
+    <Compile Include="Assets\Scripts\Pyramidka.cs" />
     <Compile Include="Assets\Scripts\Rocket.cs" />
     <Compile Include="Assets\Scripts\Static_Pillar_Spawner.cs" />
     <Compile Include="Assets\Scripts\UDPReceive.cs" />
     <Compile Include="Assets\Scripts\UDPSend.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Effects\TestShader.shader" />
+    <None Include="Assets\Effects\VHSEffect.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
@@ -176,8 +182,6 @@
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
-    <None Include="Assets\TestShader.shader" />
-    <None Include="Assets\VHSEffect.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

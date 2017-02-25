@@ -126,7 +126,7 @@ public class Player : MonoBehaviour {
 
         if (other.tag == "Pillar" || other.tag == "Rocket") {
             rb.AddRelativeForce(Vector3.forward * 2000, ForceMode.VelocityChange);
-            Info.getCameraShake().AddShake(20, 0.2f);
+            Info.getCameraShake().AddShake(40, 0.2f);
 
 			sendObj.sendString("crashed");
 
@@ -136,6 +136,7 @@ public class Player : MonoBehaviour {
             }
 
 			Info.getDistortImageEffects().Quake();
+            ObstacleExplosion.Explode(other.transform.position);
         }
     }
 

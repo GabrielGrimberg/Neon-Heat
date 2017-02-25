@@ -55,7 +55,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a40c12d76e13cd540b701e1118006d29, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -76,7 +76,7 @@ TrailRenderer:
   m_Time: 0.8
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 5
+    widthMultiplier: 10
     widthCurve:
       serializedVersion: 2
       m_Curve:

@@ -14,6 +14,10 @@ public class Pop_Up_Pillar : MonoBehaviour, ICollidable {
 
     // Use this for initialization
     void Start () {
+        //set scale
+        float scale = Random.Range(1.0f, 3.0f);
+        transform.localScale = new Vector3(scale, 1, 1);
+
         player = GameObject.FindGameObjectWithTag("Player");
 
         //offset = new Vector3(Random.Range(-1000, 1000), 0, Random.Range(-2000, -20000));

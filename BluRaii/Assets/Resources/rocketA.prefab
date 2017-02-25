@@ -197,7 +197,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1566186178372960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2277.3657, y: 2257.5713, z: 11266.995}
+  m_LocalPosition: {x: -2433.5342, y: 6111.753, z: 20487.414}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4363071165156712}
@@ -553,8 +553,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 260.566, y: 24.288612, z: -44.663795}
-  m_Center: {x: -25.936035, y: 11.644318, z: 0.74072266}
+  m_Size: {x: 767.14734, y: 105.87485, z: -44.663795}
+  m_Center: {x: 70.25781, y: 52.4375, z: 0.7402344}
 --- !u!96 &96905690090181010
 TrailRenderer:
   serializedVersion: 2
@@ -569,7 +569,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: e21c3f676a6ed7a48bfffb0b6448604c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -721,7 +721,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1147978775
+  randomSeed: 1453932340
   InitialModule:
     serializedVersion: 3
     enabled: 1

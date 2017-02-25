@@ -17,4 +17,8 @@ public class Info {
     public static DistortImageEffect getDistortImageEffects() {
         return Camera.main.GetComponent<DistortImageEffect>();
     }
+
+    public static GameObject getPlayer() {
+        return GameObject.FindGameObjectWithTag("Player");
+    }
 }

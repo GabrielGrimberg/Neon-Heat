@@ -12,7 +12,7 @@ public class Camera_Shake : MonoBehaviour{
 	// Use this for initialization
 	void Start () {
         camShake = GameObject.FindGameObjectWithTag("CameraShake");
-        //AddShake(1.5f, 2000000); //This is the background shake, but it should be a special case.
+        AddShake(1.5f, 2000000); //This is the background shake, but it should be a special case.
     }
 	
 	// Update is called once per frame
@@ -20,7 +20,7 @@ public class Camera_Shake : MonoBehaviour{
         //Lerp back to original position but not as aggressively.
         if (shakes.Count > 0) {
             camShake.transform.localPosition = Vector3.Lerp(camShake.transform.localPosition, Vector3.zero, Time.deltaTime * 5);
-            camShake.transform.localRotation = Quaternion.Lerp(camShake.transform.rotation, Quaternion.identity, Time.deltaTime * 5);
+            camShake.transform.localRotation = Quaternion.Lerp(camShake.transform.localRotation, Quaternion.identity, Time.deltaTime * 5);
         }
 
         //Check and mark for finished shakes.
@@ -77,7 +77,6 @@ public class Camera_Shake : MonoBehaviour{
 
         camShake.transform.localPosition += randomVector;
         shake.positionChanges += randomVector;
-
 
         //Tilt changes
         Vector3 randomRotation = Vector3.zero;
