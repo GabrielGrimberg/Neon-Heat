@@ -408,7 +408,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7716314b764f9d5409a9dce4f509d312, type: 2}
+  - {fileID: 2100000, guid: 32a3166748cf02342a09cb2b46cfde23, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5143,6 +5143,8 @@ GameObject:
   - component: {fileID: 384612596}
   - component: {fileID: 384612588}
   - component: {fileID: 384612595}
+  - component: {fileID: 384612597}
+  - component: {fileID: 384612598}
   m_Layer: 0
   m_Name: DeLorean
   m_TagString: Player
@@ -5392,6 +5394,97 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415093648beaa784fbdbdb2abc3cd629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &384612597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 384612584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee0d9dbb80fdf4845858f898387a824c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &384612598
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 384612584}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a5182861c59bc484e8e94e3ec1dab117, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &398995050
 GameObject:
   m_ObjectHideFlags: 0
@@ -6136,7 +6229,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fd8b197841a339a4d90e0ad13b3bdf22, type: 2}
+  - {fileID: 2100000, guid: 3bc7e3a265159d0448c67ea9b92d98d4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11454,8 +11547,9 @@ GameObject:
   - component: {fileID: 855909766}
   - component: {fileID: 855909770}
   - component: {fileID: 855909771}
+  - component: {fileID: 855909774}
   - component: {fileID: 855909772}
-  - component: {fileID: 855909773}
+  - component: {fileID: 855909775}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -11573,7 +11667,7 @@ Skybox:
   m_GameObject: {fileID: 855909764}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: f5658e0feb99ead448a4b78b72733ec8, type: 2}
---- !u!114 &855909773
+--- !u!114 &855909774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -11581,9 +11675,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 855909764}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7650a19bf238e5488cab5276bbe65d1, type: 3}
+  m_Script: {fileID: 11500000, guid: b8b9fab2e3c020e4484ba4d4c8464f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: bba543a64789ae446ba61526b594cfc0, type: 3}
+  onOff: 0
+--- !u!114 &855909775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 855909764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478a2083ad114a07d000fbfb8d76c639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: e9ba2083ad114a07d000fbfb8d76c639, type: 3}
+  blurAmount: 0.8
+  extraBlur: 0
 --- !u!1 &859805084
 GameObject:
   m_ObjectHideFlags: 0
@@ -16736,7 +16846,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7716314b764f9d5409a9dce4f509d312, type: 2}
+  - {fileID: 2100000, guid: 32a3166748cf02342a09cb2b46cfde23, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

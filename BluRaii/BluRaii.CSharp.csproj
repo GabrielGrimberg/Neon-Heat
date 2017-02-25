@@ -52,6 +52,9 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -66,6 +69,9 @@
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
@@ -87,17 +93,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CameraFollow.cs" />
-    <Compile Include="Assets\FollowPlayer.cs" />
     <Compile Include="Assets\Menu Scripts\LevelMananger.cs" />
     <Compile Include="Assets\Scripts\AccelServer.cs" />
+    <Compile Include="Assets\Scripts\BlurEffect.cs" />
+    <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Camera_Shake.cs" />
     <Compile Include="Assets\Scripts\City_Duplicator.cs" />
     <Compile Include="Assets\Scripts\DistortImageEffect.cs" />
     <Compile Include="Assets\Scripts\DoubleTap.cs" />
+    <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Helper.cs" />
     <Compile Include="Assets\Scripts\ICollidable.cs" />
     <Compile Include="Assets\Scripts\Info.cs" />
+    <Compile Include="Assets\Scripts\InvertedColor.cs" />
     <Compile Include="Assets\Scripts\Laser_Precursor.cs" />
     <Compile Include="Assets\Scripts\Laser_Spawner.cs" />
     <Compile Include="Assets\Scripts\LightChanger.cs" />
@@ -108,12 +116,15 @@
     <Compile Include="Assets\Scripts\Pop_Up_Pillar.cs" />
     <Compile Include="Assets\Scripts\Pyramidka.cs" />
     <Compile Include="Assets\Scripts\Rocket.cs" />
+    <Compile Include="Assets\Scripts\Shield.cs" />
+    <Compile Include="Assets\Scripts\SpeedUpRinGSpawner.cs" />
+    <Compile Include="Assets\Scripts\SpeedUpRing.cs" />
     <Compile Include="Assets\Scripts\Static_Pillar_Spawner.cs" />
     <Compile Include="Assets\Scripts\UDPReceive.cs" />
     <Compile Include="Assets\Scripts\UDPSend.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Effects\TestShader.shader" />
+    <None Include="Assets\Effects\InvertedColor.shader" />
     <None Include="Assets\Effects\VHSEffect.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />

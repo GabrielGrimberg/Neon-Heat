@@ -21,4 +21,12 @@ public class Info {
     public static GameObject getPlayer() {
         return GameObject.FindGameObjectWithTag("Player");
     }
+
+    public static InvertedColor getInvertedColorEffects() {
+        return Camera.main.GetComponent<InvertedColor>();
+    }
+
+    public static UnityStandardAssets.ImageEffects.MotionBlur getBlurEffects() {
+        return Camera.main.GetComponent<UnityStandardAssets.ImageEffects.MotionBlur>();
+    }
 }

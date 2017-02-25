@@ -23,11 +23,15 @@ public class Player : MonoBehaviour {
 
     DoubleTap aDoubleTap;
     DoubleTap bDoubleTap;
+    Shield shield;
+    BlurEffect blur;
 
 	UDPSend sendObj;
 
 	// Use this for initialization
 	void Start () {
+        shield = new Shield();
+        blur = new BlurEffect();
         rb = GetComponent<Rigidbody>();
 
 		sendObj = new UDPSend();
@@ -42,13 +46,15 @@ public class Player : MonoBehaviour {
 	void Update () {
         aDoubleTap.Update();
         bDoubleTap.Update();
+        shield.Update();
+        blur.Update();
 
-		//Get data from UDPRecieve script for X value of acceleromter on app
-		float.TryParse (UDPReceive.lastReceivedUDPPacket, out accelData);
+        //Get data from UDPRecieve script for X value of acceleromter on app
+        float.TryParse (UDPReceive.lastReceivedUDPPacket, out accelData);
 		//Debug.Log(accelData);
 
         //Accelerate the car initally.
-        if(rb.velocity.z > -10000) {
+        if(rb.velocity.z > -4000) {
             rb.AddRelativeForce(Vector3.forward * -1000);
         }
 
@@ -95,6 +101,13 @@ public class Player : MonoBehaviour {
             currentHorizontalSpeed = 0;
         }
 
+        //tilt
+        //Mb turn more the more ur speed is
+        Vector3 rotation = transform.localRotation.eulerAngles;
+        rotation.y = Helper.Remap(currentHorizontalSpeed, (-maxHorizontalSpeed + -bonusHorizontalSpeed + -boostHorizontalSpeed) * -1, -maxHorizontalSpeed + -bonusHorizontalSpeed + -boostHorizontalSpeed, -20, 20);
+        rotation.z = Helper.Remap(currentHorizontalSpeed, (-maxHorizontalSpeed + -bonusHorizontalSpeed + -boostHorizontalSpeed) * -1, -maxHorizontalSpeed + -bonusHorizontalSpeed + -boostHorizontalSpeed, -7, 7);
+        transform.localRotation = Quaternion.Euler(rotation);
+
         rb.velocity = new Vector3(currentHorizontalSpeed, rb.velocity.y, rb.velocity.z);
 
 		//Set speed to minimum if less than minimum.
@@ -124,7 +137,7 @@ public class Player : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         //Debug.Log("Triggered with " + other.tag);
 
-        if (other.tag == "Pillar" || other.tag == "Rocket") {
+        if ((other.tag == "Pillar" || other.tag == "Rocket") && !shield.onOff) {
             rb.AddRelativeForce(Vector3.forward * 2000, ForceMode.VelocityChange);
             Info.getCameraShake().AddShake(40, 0.2f);
 
@@ -137,6 +150,13 @@ public class Player : MonoBehaviour {
 
 			Info.getDistortImageEffects().Quake();
             ObstacleExplosion.Explode(other.transform.position);
+        }
+
+        if (other.tag == "SpeedUpRing") {
+            rb.AddRelativeForce(Vector3.forward * -2000, ForceMode.VelocityChange);
+            //Info.getCameraShake().AddShake(40, 0.2f);
+            //Info.getDistortImageEffects().Quake();
+            blur.Quake();
         }
     }
 
