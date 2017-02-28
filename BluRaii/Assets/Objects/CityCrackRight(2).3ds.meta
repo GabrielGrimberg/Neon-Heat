@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: fbbf73302c025b348adc47d7c3720682
+timeCreated: 1488137877
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bldgs2
+    100002: Boole
+    100004: Boole_1
+    100006: Cap_1
+    100008: Cap_11
+    100010: Cap_2
+    100012: Cap_21
+    100014: //RootNode
+    100016: Cube
+    100018: Cube_1
+    100020: Cube_1_1
+    100022: Cube_1_2
+    100024: Cube_1_3
+    100026: Cube_1_4
+    100028: Cube_1_5
+    100030: Cube_1_6
+    100032: Cube_1_7
+    100034: Extru
+    100036: Extrude_NU
+    100038: mesh01
+    100040: mesh01_1
+    100042: mesh01_2
+    100044: mesh01_3
+    100046: Object_1
+    400000: bldgs2
+    400002: Boole
+    400004: Boole_1
+    400006: Cap_1
+    400008: Cap_11
+    400010: Cap_2
+    400012: Cap_21
+    400014: //RootNode
+    400016: Cube
+    400018: Cube_1
+    400020: Cube_1_1
+    400022: Cube_1_2
+    400024: Cube_1_3
+    400026: Cube_1_4
+    400028: Cube_1_5
+    400030: Cube_1_6
+    400032: Cube_1_7
+    400034: Extru
+    400036: Extrude_NU
+    400038: mesh01
+    400040: mesh01_1
+    400042: mesh01_2
+    400044: mesh01_3
+    400046: Object_1
+    2300000: bldgs2
+    2300002: Boole
+    2300004: Boole_1
+    2300006: Cube
+    2300008: Cube_1
+    2300010: Cube_1_1
+    2300012: Cube_1_2
+    2300014: Cube_1_3
+    2300016: Cube_1_4
+    2300018: Cube_1_5
+    2300020: Cube_1_6
+    2300022: Cube_1_7
+    2300024: Extru
+    2300026: Extrude_NU
+    2300028: mesh01
+    2300030: mesh01_1
+    2300032: mesh01_2
+    2300034: mesh01_3
+    2300036: Object_1
+    3300000: bldgs2
+    3300002: Boole
+    3300004: Boole_1
+    3300006: Cube
+    3300008: Cube_1
+    3300010: Cube_1_1
+    3300012: Cube_1_2
+    3300014: Cube_1_3
+    3300016: Cube_1_4
+    3300018: Cube_1_5
+    3300020: Cube_1_6
+    3300022: Cube_1_7
+    3300024: Extru
+    3300026: Extrude_NU
+    3300028: mesh01
+    3300030: mesh01_1
+    3300032: mesh01_2
+    3300034: mesh01_3
+    3300036: Object_1
+    4300000: Boole_1
+    4300002: Object_1
+    4300004: Extrude_NU
+    4300006: Boole
+    4300008: Cube
+    4300010: Extru
+    4300012: Cube_1_7
+    4300014: Cube_1_6
+    4300016: Cube_1_5
+    4300018: Cube_1_4
+    4300020: Cube_1_3
+    4300022: Cube_1_2
+    4300024: Cube_1_1
+    4300026: Cube_1
+    4300028: mesh01_3
+    4300030: mesh01_2
+    4300032: mesh01_1
+    4300034: bldgs2
+    4300036: mesh01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

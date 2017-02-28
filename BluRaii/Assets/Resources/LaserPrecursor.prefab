@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4504846521186648}
   - component: {fileID: 96603856444789022}
   - component: {fileID: 114133941209936214}
+  - component: {fileID: 114136363519188420}
   m_Layer: 0
   m_Name: LaserPrecursor
   m_TagString: Untagged
@@ -148,5 +149,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c570bf8f03fcab409667b11f9b5f70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114136363519188420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1064649301170670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d85b41e57030f46959433f84a25182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

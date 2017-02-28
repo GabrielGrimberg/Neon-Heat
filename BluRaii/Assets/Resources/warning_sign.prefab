@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4573427685842930}
   - component: {fileID: 212096641738124916}
+  - component: {fileID: 114096846798543916}
   m_Layer: 0
   m_Name: warning_sign
   m_TagString: Untagged
@@ -40,6 +41,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114096846798543916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804118894401656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d85b41e57030f46959433f84a25182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212096641738124916
 SpriteRenderer:
   m_ObjectHideFlags: 1

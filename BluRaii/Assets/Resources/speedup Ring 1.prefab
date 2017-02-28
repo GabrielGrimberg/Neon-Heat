@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 54114097305454308}
   - component: {fileID: 65995284882977090}
   - component: {fileID: 114237125597154198}
+  - component: {fileID: 114202396903297114}
   m_Layer: 0
   m_Name: speedup Ring 1
   m_TagString: SpeedUpRing
@@ -140,6 +141,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 603.9837, y: 158.85303, z: 603.9838}
   m_Center: {x: 0, y: -62.202644, z: 0.0000076293945}
+--- !u!114 &114202396903297114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354146553636032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d85b41e57030f46959433f84a25182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114237125597154198
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -13,7 +13,7 @@ public class CameraFollow : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //0, 266, 1023
-        transform.localPosition = new Vector3(0, 266, 1023) + player.transform.position;
-        transform.localRotation = Quaternion.Euler(new Vector3(-5.13f, -180, 0));
+        //transform.localPosition = new Vector3(0, 266, 1023) + player.transform.position;
+        //transform.localRotation = Quaternion.Euler(new Vector3(-5.13f, -180, 0));
 	}
 }

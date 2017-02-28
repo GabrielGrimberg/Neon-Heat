@@ -11,6 +11,9 @@ TagManager:
   - SpeedUpRing
   - WheelSmoke
   - ShieldSphere
+  - Portal
+  - PlayerCameraAnchor
+  - SpeedometerMask
   layers:
   - Default
   - TransparentFX
@@ -20,8 +23,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Portal2
+  - SpeedometerMask
   - 
   - 
   - 

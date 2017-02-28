@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 54985636051419282}
   - component: {fileID: 65769270300842926}
   - component: {fileID: 114322575533269020}
+  - component: {fileID: 114613111251371672}
   m_Layer: 0
   m_Name: pop_up_pillar
   m_TagString: Pillar
@@ -118,5 +119,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a83f07f5179d15343bf0b9dcbbdca9c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114613111251371672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1548015392203940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d85b41e57030f46959433f84a25182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

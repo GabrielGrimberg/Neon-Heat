@@ -29,4 +29,8 @@ public class Info {
     public static UnityStandardAssets.ImageEffects.MotionBlur getBlurEffects() {
         return Camera.main.GetComponent<UnityStandardAssets.ImageEffects.MotionBlur>();
     }
+
+    public static FollowPlayer getFollowPlayer() {
+        return GameObject.FindGameObjectWithTag("PlayerCameraAnchor").GetComponent<FollowPlayer>();
+    }
 }

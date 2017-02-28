@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 54238104402688656}
   - component: {fileID: 65545396298978122}
   - component: {fileID: 114126764824159566}
+  - component: {fileID: 114994795501594722}
   m_Layer: 0
   m_Name: pyramidka
   m_TagString: Pillar
@@ -147,5 +148,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57af557e4ae5f2f498bbd1a6e3fdcec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114994795501594722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1942531974014546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d85b41e57030f46959433f84a25182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

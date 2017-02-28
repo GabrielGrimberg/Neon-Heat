@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class City_Duplicator : MonoBehaviour {
     public GameObject city;
+    public GameObject cityCrackLeft;
+    public GameObject cityCrackRight;
+
     public static Vector3 cityStart;
     public static Vector3 cityEnd;
 
@@ -14,7 +17,16 @@ public class City_Duplicator : MonoBehaviour {
 
         float z = size.z;
         for (int i = 0; i < 100; i++) {
-            cityEnd = Object.Instantiate(city, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation).transform.position;
+            if (Random.Range(0, 3) == 1) {
+                if (Random.Range(0, 2) == 1) {
+                    cityEnd = Object.Instantiate(cityCrackLeft, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation).transform.position;
+                } else {
+                    cityEnd = Object.Instantiate(cityCrackRight, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation).transform.position;
+                }
+            } else {
+                cityEnd = Object.Instantiate(city, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation).transform.position;
+            }
+                
             z -= size.z;
         }
     }

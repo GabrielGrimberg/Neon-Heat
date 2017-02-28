@@ -30,13 +30,16 @@ public class Player : MonoBehaviour {
 
     GameObject[] wheelSmoke;
 
+    Speedometer speedometer;
+
 	// Use this for initialization
 	void Start () {
         shield = new Shield();
         blur = new BlurEffect();
         rb = GetComponent<Rigidbody>();
+        speedometer = new Speedometer();
 
-		sendObj = new UDPSend();
+        sendObj = new UDPSend();
 		sendObj.init();
 
         aDoubleTap = new DoubleTap(KeyCode.A, 0.2f, DashLeft);
@@ -52,6 +55,7 @@ public class Player : MonoBehaviour {
         bDoubleTap.Update();
         shield.Update();
         blur.Update();
+        speedometer.Update();
 
         //Get data from UDPRecieve script for X value of acceleromter on app
         float.TryParse (UDPReceive.lastReceivedUDPPacket, out accelData);
@@ -174,6 +178,14 @@ public class Player : MonoBehaviour {
             //Info.getCameraShake().AddShake(40, 0.2f);
             //Info.getDistortImageEffects().Quake();
             blur.Quake();
+        }
+
+        if (other.tag == "Portal") {
+            Info.getFollowPlayer().GoStraight(rb.velocity.z);
+
+            Vector3 teleportPosition = other.GetComponent<Portal>().connectionPortal.transform.position;
+            teleportPosition.y = transform.position.y;
+            transform.position = teleportPosition;
         }
     }
 
