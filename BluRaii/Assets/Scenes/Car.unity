@@ -2498,9 +2498,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e905f804e2cb243bf1e5f37373e399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IP: 127.0.0.1
-  port: 0
-  allReceivedUDPPackets: 
 --- !u!65 &384612589
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2668,7 +2665,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c632d92114bab459e99b4d0a9bb1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  port: 15000
 --- !u!114 &384612596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3704,7 +3700,7 @@ ParticleSystem:
   m_GameObject: {fileID: 515415104}
   serializedVersion: 5
   lengthInSec: 10
-  speed: 1
+  speed: 10
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -3751,7 +3747,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1668389632
+  randomSeed: 79602568
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -12688,7 +12684,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1436003723}
   serializedVersion: 5
   lengthInSec: 10
-  speed: 1
+  speed: 10
   looping: 1
   prewarm: 0
   playOnAwake: 1
