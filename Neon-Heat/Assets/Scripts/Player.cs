@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
 
     public Text hSpeed;
     public Text tSpeed;
+    public Text tScore;
 
     DoubleTap aDoubleTap;
     DoubleTap bDoubleTap;
@@ -34,6 +35,8 @@ public class Player : MonoBehaviour {
     Speedometer speedometer;
 
     bool dropDown = false;
+
+    int score = 0;
 
     // Use this for initialization
     void Start () {
@@ -63,6 +66,8 @@ public class Player : MonoBehaviour {
             DropDown();
             return;
         }
+
+        score += (int)(Mathf.Abs(rb.velocity.z) * Time.deltaTime);
 
         //Get data from UDPRecieve script for X value of acceleromter on app
         float.TryParse (UDPReceive.lastReceivedUDPPacket, out accelData);
@@ -158,8 +163,12 @@ public class Player : MonoBehaviour {
 		}
 
 		if (tSpeed != null) {
-			tSpeed.text = "Speed: " + rb.velocity.z.ToString();
+			tSpeed.text = (rb.velocity.z / 500.0f).ToString() + "m/s";
 		}
+
+        if (tScore != null) {
+            tScore.text = "Score: " + (score / 500).ToString() + "m";
+        }
 	}
 
     void OnTriggerEnter(Collider other) {

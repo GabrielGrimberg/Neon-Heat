@@ -5,7 +5,7 @@
 | -------------   |:-------------:|
 | Zan Smirnov     |https://github.com/Majiick         |
 | Gabriel Grimberg|https://github.com/GabrielGrimberg |
-| Evgeny Timoshin |https://github.com/Abdul-Ismail    |
+| Evgeny Timoshin |https://github.com/EvgenyTimoshin    |
 | Daniel Vegera   |https://github.com/yungrazr        |
 | Abdul Ismail    |https://github.com/Abdul-Ismail    |
 #### Introduction
