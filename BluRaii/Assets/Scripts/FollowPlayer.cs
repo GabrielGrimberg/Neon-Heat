@@ -5,6 +5,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour {
     GameObject player;
     public bool follow = true;
+    public bool birdsEyeView = false;
     float forwardSpeed;
 
     // Use this for initialization
@@ -14,6 +15,12 @@ public class FollowPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        if (birdsEyeView) {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, player.transform.position + Vector3.up*1000 + Vector3.forward * 5, 0.1f);
+            transform.LookAt(player.transform.position);
+            return;
+        }
+
         if(follow) {
             //transform.localPosition = new Vector3(0, 266, 1023) + player.transform.position;
             transform.localRotation = Quaternion.Euler(new Vector3(-5.13f, -180, 0));

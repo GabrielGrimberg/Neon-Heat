@@ -15,6 +15,7 @@ TagManager:
   - PlayerCameraAnchor
   - SpeedometerMask
   - globalUDP
+  - CityCrack
   layers:
   - Default
   - TransparentFX

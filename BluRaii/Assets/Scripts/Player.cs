@@ -33,10 +33,10 @@ public class Player : MonoBehaviour {
 
     Speedometer speedometer;
 
+    bool dropDown = false;
 
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         shield = new Shield();
         blur = new BlurEffect();
         rb = GetComponent<Rigidbody>();
@@ -58,6 +58,11 @@ public class Player : MonoBehaviour {
         shield.Update();
         blur.Update();
         speedometer.Update();
+
+        if (dropDown) {
+            DropDown();
+            return;
+        }
 
         //Get data from UDPRecieve script for X value of acceleromter on app
         float.TryParse (UDPReceive.lastReceivedUDPPacket, out accelData);
@@ -191,6 +196,10 @@ public class Player : MonoBehaviour {
             teleportPosition.y = transform.position.y;
             transform.position = teleportPosition;
         }
+
+        if (other.tag == "CityCrack") {
+            StartDropDown();
+        }
     }
 
     void DashRight() {
@@ -199,5 +208,21 @@ public class Player : MonoBehaviour {
 
     void DashLeft() {
         boostHorizontalSpeed = 15000;
+    }
+
+    void DieExplode() {
+        Destroy(gameObject);
+    }
+
+    void DropDown() {
+        rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, Time.deltaTime / 0.15f);
+        rb.transform.localPosition += Vector3.down * 1000 * Time.deltaTime;
+    }
+
+    void StartDropDown() {
+        dropDown = true;
+        Info.getFollowPlayer().birdsEyeView = true;
+
+        Invoke("DieExplode", 2.0f);
     }
 }

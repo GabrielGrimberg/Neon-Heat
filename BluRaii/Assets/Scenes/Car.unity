@@ -4153,7 +4153,7 @@ ParticleSystem:
   m_GameObject: {fileID: 515415104}
   serializedVersion: 5
   lengthInSec: 10
-  simulationSpeed: 10
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -7284,7 +7284,7 @@ ParticleSystem:
   m_GameObject: {fileID: 598902413}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 10
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -7331,7 +7331,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 527413924
+  randomSeed: -771350036
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -15566,7 +15566,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1250788192}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 10
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -19684,7 +19684,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1436003723}
   serializedVersion: 5
   lengthInSec: 10
-  simulationSpeed: 10
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -23066,6 +23066,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7716314b764f9d5409a9dce4f509d312, type: 2}
+    - target: {fileID: 100014, guid: e91f193fb9eff47489f2460051cfefbb, type: 3}
+      propertyPath: m_TagString
+      value: CityCrack
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e91f193fb9eff47489f2460051cfefbb, type: 3}
   m_IsPrefabParent: 0
@@ -25077,6 +25081,45 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400014, guid: e91f193fb9eff47489f2460051cfefbb, type: 3}
   m_PrefabInternal: {fileID: 1525039653}
+--- !u!54 &1776848186
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1776848184}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1776848187
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1776848184}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 385.3813, y: -376.51172, z: 753.7947}
+  m_Center: {x: -192.19092, y: -55.534912, z: -171.24707}
+--- !u!65 &1776848188
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1776848184}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: -442.4895, y: -515.36804, z: -580.11475}
+  m_Center: {x: -343.32178, y: -104.88263, z: -768.4512}
 --- !u!1 &1781069803
 GameObject:
   m_ObjectHideFlags: 0
@@ -25346,6 +25389,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fd8b197841a339a4d90e0ad13b3bdf22, type: 2}
+    - target: {fileID: 100014, guid: fbbf73302c025b348adc47d7c3720682, type: 3}
+      propertyPath: m_TagString
+      value: CityCrack
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbbf73302c025b348adc47d7c3720682, type: 3}
   m_IsPrefabParent: 0
@@ -26259,7 +26306,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1919769455}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -30495,3 +30542,42 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400014, guid: fbbf73302c025b348adc47d7c3720682, type: 3}
   m_PrefabInternal: {fileID: 1783003865}
+--- !u!65 &2136060917
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2136060915}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: -329.34802, y: 212.92566, z: -865.3958}
+  m_Center: {x: -772.473, y: 9.753662, z: -65.36621}
+--- !u!54 &2136060918
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2136060915}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2136060919
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2136060915}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: -230.73889, y: 195.69688, z: 495.96118}
+  m_Center: {x: -867.6561, y: 21.775146, z: -759.4834}
