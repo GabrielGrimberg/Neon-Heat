@@ -8,11 +8,15 @@ public class Leaderboard : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		client = new TcpClient("localhost", 9999);
+        try {
+            client = new TcpClient("localhost", 9999);
+        } catch (SocketException e) {
+            Debug.Log("Connection to leaderboard server couldn't be made.");
+        }
 
-		//SubmitScore ("Evgeniy", 132);
-		//SubmitScore ("Gabz", -5);
-		Debug.Log(ReceiveScore());
+        //SubmitScore ("Evgeniy", 132);
+        //SubmitScore ("Gabz", -5);
+        Debug.Log(ReceiveScore());
 	}
 	
 	// Update is called once per frame
@@ -21,13 +25,17 @@ public class Leaderboard : MonoBehaviour {
 	}
 
 	public void SubmitScore(string name, int score) {
+        if (client == null) return;
+
 		NetworkStream stream = client.GetStream();
 		byte[] data = System.Text.Encoding.ASCII.GetBytes(name + "#" + score.ToString());
 		stream.Write(data, 0, data.Length);
 	}
 
 	public string ReceiveScore() {
-		NetworkStream stream = client.GetStream();
+        if (client == null) return string.Empty;
+
+        NetworkStream stream = client.GetStream();
 		byte[] data = System.Text.Encoding.ASCII.GetBytes("RESULTS"); 
 		stream.Write(data, 0, data.Length);
 
