@@ -5,13 +5,15 @@ using UnityEngine;
 public class Shield {
     public bool onOff = false;
     InvertedColor invertedColor;
-	// Use this for initialization
-	void Start () {
-        
-    }
+    GameObject sphere;
 
     // Update is called once per frame
     public void Update() {
+        if (sphere == null) {
+            sphere = GameObject.FindGameObjectWithTag("ShieldSphere");
+        }
+
+
         if (invertedColor == null) {
             invertedColor = Info.getInvertedColorEffects();
         } else {
@@ -22,6 +24,12 @@ public class Shield {
             }
 
             invertedColor.onOff = onOff;
+
+            if (onOff) {
+                sphere.SetActive(true);
+            } else {
+                sphere.SetActive(false);
+            }
         }
     }
 }

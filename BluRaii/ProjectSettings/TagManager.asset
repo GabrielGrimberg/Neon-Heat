@@ -10,6 +10,7 @@ TagManager:
   - CameraShake
   - SpeedUpRing
   - WheelSmoke
+  - ShieldSphere
   layers:
   - Default
   - TransparentFX
