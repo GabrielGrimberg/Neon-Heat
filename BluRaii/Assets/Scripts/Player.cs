@@ -26,11 +26,14 @@ public class Player : MonoBehaviour {
     Shield shield;
     BlurEffect blur;
 
-	UDPSend sendObj;
+	public GameObject sendRef;
+	UDPSend udpSendRef;
 
     GameObject[] wheelSmoke;
 
     Speedometer speedometer;
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -39,8 +42,7 @@ public class Player : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         speedometer = new Speedometer();
 
-        sendObj = new UDPSend();
-		sendObj.init();
+		udpSendRef = sendRef.GetComponent<UDPSend> ();
 
         aDoubleTap = new DoubleTap(KeyCode.A, 0.2f, DashLeft);
         bDoubleTap = new DoubleTap(KeyCode.D, 0.2f, DashRight);
@@ -158,11 +160,13 @@ public class Player : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         //Debug.Log("Triggered with " + other.tag);
 
+		udpSendRef.sendString ("crashed");
+
         if ((other.tag == "Pillar" || other.tag == "Rocket") && !shield.onOff) {
             rb.AddRelativeForce(Vector3.forward * 2000, ForceMode.VelocityChange);
             Info.getCameraShake().AddShake(40, 0.2f);
 
-			sendObj.sendString("crashed");
+
 
             ICollidable collidable = other.GetComponent<ICollidable>();
             if (collidable != null) {

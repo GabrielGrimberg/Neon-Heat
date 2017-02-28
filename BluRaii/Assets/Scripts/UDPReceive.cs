@@ -12,6 +12,9 @@ public class UDPReceive : MonoBehaviour {
 	// receiving Thread
 	Thread receiveThread;
 
+	public GameObject sendRef;
+	UDPSend udpSendRef;
+
 	// udpclient object
 	UdpClient client;
 
@@ -22,6 +25,9 @@ public class UDPReceive : MonoBehaviour {
 	// infos
 	public static string lastReceivedUDPPacket="";
 	public string allReceivedUDPPackets=""; // clean up this from time to time!
+
+	public bool phoneIP = false;
+	private string phoneIpAddress;
 
 
 	// start from shell
@@ -40,11 +46,19 @@ public class UDPReceive : MonoBehaviour {
 	// start from unity3d
 	public void Start()
 	{
-
+		udpSendRef = sendRef.GetComponent<UDPSend> ();
 		init();
 	}
 		
-
+	void Update()
+	{
+		if (phoneIP) {
+			string[] splitString = lastReceivedUDPPacket.Split(new string[] { " " }, StringSplitOptions.None);
+			udpSendRef.init(splitString[1]);
+			Debug.Log ("Assigned IP");
+			phoneIP = false;
+		}
+	}
 	// init
 	private void init()
 	{
@@ -91,9 +105,13 @@ public class UDPReceive : MonoBehaviour {
 				// Den abgerufenen Text anzeigen.
 				//print(">> " + text);
 
-				// latest UDPpacket
-				lastReceivedUDPPacket=text;
+				if(text.Contains("MyIP")){
+					phoneIpAddress = text;
+					phoneIP = true;
+				}
 
+				lastReceivedUDPPacket=text;
+				//Debug.Log(text);
 				// ....
 				allReceivedUDPPackets=allReceivedUDPPackets+text;
 

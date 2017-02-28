@@ -38,6 +38,7 @@ public class UDPSend : MonoBehaviour
 	string strMessage="";
 
 
+
 	// call it from shell (as program)
 	private static void Main()
 	{
@@ -46,20 +47,20 @@ public class UDPSend : MonoBehaviour
 	// start from unity3d
 	public void Start()
 	{
-		init();
+		this.tag = "globalUDP";
 	}
 		
 
 	// init
-	public void init()
+	public void init(String IpAddress)
 	{
 		// Endpunkt definieren, von dem die Nachrichten gesendet werden.
 		print("UDPSend.init()");
 
 		// define
-		IP="192.168.1.12";
+		IP = IpAddress;
 		port=15000;
-
+		Debug.Log ("Phones IP" + IP);
 		// ----------------------------
 		// Senden
 		// ----------------------------
@@ -75,11 +76,11 @@ public class UDPSend : MonoBehaviour
 	// sendData
 	public void sendString(string message)
 	{
+		Debug.Log ("CRASHHHHH");
 		try
 		{
 			byte[] data = Encoding.UTF8.GetBytes(message);
 
-			Debug.Log("In Send Method");
 			client.Send(data, data.Length, remoteEndPoint);
 
 		}

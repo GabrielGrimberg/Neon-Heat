@@ -33,4 +33,8 @@ public class Info {
     public static FollowPlayer getFollowPlayer() {
         return GameObject.FindGameObjectWithTag("PlayerCameraAnchor").GetComponent<FollowPlayer>();
     }
+
+	public static UDPSend getUDPSend(){
+		return GameObject.Find("globalUdpSend").GetComponent<UDPSend> ();
+	}
 }
