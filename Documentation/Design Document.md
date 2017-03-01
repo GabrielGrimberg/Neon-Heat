@@ -35,9 +35,9 @@
 - [ ] Freeroam mode where you can move to the left or right as much as you want.
 - [x] Cops chasing the player.
 - [ ] Implement a losing state.
-- [ ] A main menu where you can select to play and adjust settings such as turning off SFX, Music etc.
+- [x] A main menu where you can select to play and adjust settings such as turning off SFX, Music etc.
 - [ ] Re-skin everything such as the car, pillars, floor etc.
-- [ ] Sound effects.
+- [x] Sound effects.
 - [ ] Weather effect that switches every X amount of minutes.
 - [x] Car camera effects such as shaking, changing colour etc.
 
@@ -46,8 +46,8 @@
 - [ ] Upgrades to cars.
 - [ ] More cars in the game.
 - [ ] Camera viewing angles. So 1st person and 3rd person.
-- [ ] Power ups to assist the player such as immunity to getting hit by the pillar, reroll option if you lose etc.
-- [ ] Leaderboard that holds the score, distance traveled and cash collected.
+- [x] Power ups to assist the player such as immunity to getting hit by the pillar, reroll option if you lose etc.
+- [x] Leaderboard that holds the score, distance traveled and cash collected.
 - [ ] Multiplayer gameplay.
 
 

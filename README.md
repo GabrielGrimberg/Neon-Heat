@@ -31,10 +31,27 @@ get interesting.
 - To be updated...
 
 #### Key Features
-- To be updated...
+- A device such as a phone to be used to control the car using the device's motion.
+- A game mode that switches via entering a portal.
+- Power-ups such as shooting obstacles and shield that prevents you from crashing.
+- Cops chasing you so you must maintain your speed to not lose.
+- A main menu where you can select to play and adjust settings such as turning off SFX and Music.
+- Cool artwork and sound effects.
+- Car camera effects such as shaking and changing colours when hitting an obstacle.
+- Leaderboard that holds the distance traveled.
+
+#### How To Play
+- Select from the Main Menu, options that include Start, Leaderboard, Options and End.
+- The Start option is to play the game.
+- If the Start button is clicked you start playing.
+- You can use the AD keys from the keyboard to move the car.
+- You can also use your phone to control the car so by tilting left or right.
+- The Leaderboard displays people's scores.
+- Options to enable or disable SFX or Music
+- End to quit the game. 
 
 #### Video Game Trailer
 - To be updated...
 
 #### Assets
-- To be updated...
+- Game Music - [SFX & Sound](https://soundcloud.com/sport-smen) by Daniel Vegera 
