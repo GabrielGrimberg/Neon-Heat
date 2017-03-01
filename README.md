@@ -1,4 +1,4 @@
-![BluRaii Logo](https://github.com/Majiick/BluRaii/blob/master/Documentation/MainLogo.png)
+![Neon Heat Logo](https://github.com/Majiick/Neon-Heat/blob/master/Design Doc/MainLogo.png)
 
 #### Team Members
 | Name       | GitHub Link      |
