@@ -53,7 +53,7 @@ public class UDPReceive : MonoBehaviour {
 	void Update()
 	{
 		if (phoneIP) {
-			string[] splitString = lastReceivedUDPPacket.Split(new string[] { " " }, StringSplitOptions.None);
+			string[] splitString = phoneIpAddress.Split(new string[] { " " }, StringSplitOptions.None);
 			udpSendRef.init(splitString[1]);
 			Debug.Log ("Assigned IP");
 			phoneIP = false;
