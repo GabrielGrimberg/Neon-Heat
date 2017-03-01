@@ -35,6 +35,7 @@ public class Player : MonoBehaviour {
     Speedometer speedometer;
 
     bool dropDown = false;
+    bool desertMode = false;
 
     int score = 0;
 
@@ -94,6 +95,10 @@ public class Player : MonoBehaviour {
 
 		if (accelData < - 0.12) {
 			currentHorizontalSpeed = Mathf.Lerp(currentHorizontalSpeed, (accelData*10000) * -1 + bonusHorizontalSpeed + boostHorizontalSpeed, Time.deltaTime / 0.2f);
+        }
+
+        if (Input.GetKey(KeyCode.Escape)) {
+            Application.Quit();
         }
 
 		if (Input.GetKey(KeyCode.D)) {
@@ -204,6 +209,7 @@ public class Player : MonoBehaviour {
             Vector3 teleportPosition = other.GetComponent<Portal>().connectionPortal.transform.position;
             teleportPosition.y = transform.position.y;
             transform.position = teleportPosition;
+            EnterDesert();
         }
 
         if (other.tag == "CityCrack") {
@@ -233,5 +239,9 @@ public class Player : MonoBehaviour {
         Info.getFollowPlayer().birdsEyeView = true;
 
         Invoke("DieExplode", 2.0f);
+    }
+
+    public void EnterDesert() {
+        desertMode = true;
     }
 }
