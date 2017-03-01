@@ -5,11 +5,11 @@
 | -------------   |:-------------:|
 | Zan Smirnov     |https://github.com/Majiick         |
 | Gabriel Grimberg|https://github.com/GabrielGrimberg |
-| Evgeny Timoshin |https://github.com/EvgenyTimoshin    |
+| Evgeny Timoshin |https://github.com/EvgenyTimoshin  |
 | Daniel Vegera   |https://github.com/yungrazr        |
 | Abdul Ismail    |https://github.com/Abdul-Ismail    |
 #### Introduction
-A racing game that goes by the name of BlueRaii which is currently in development. This game will be powered by Unity3D engine and written in C#.
+A racing game that goes by the name of Neon Heat which is currently in development. This game will be powered by Unity3D engine and written in C#.
 
 This project is due to enter the Games Fleadh competition, the theme for this year is a Racing Game which is why we have decided to make an original Racing Game.
 
@@ -54,4 +54,4 @@ get interesting.
 - To be updated...
 
 #### Assets
-- Game Music - [SFX & Sound](https://soundcloud.com/sport-smen) by Daniel Vegera 
+- Game Music - SFX & Sound by [Daniel Vegera](https://soundcloud.com/sport-smen)
