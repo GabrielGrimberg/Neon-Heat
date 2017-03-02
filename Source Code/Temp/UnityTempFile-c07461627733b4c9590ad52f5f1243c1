@@ -79,6 +79,7 @@
 -define:UNITY_EDITOR_64
 -define:UNITY_EDITOR_OSX
 -define:UNITY_TEAM_LICENSE
+'Assets/DrawLeaderBoard.cs'
 'Assets/Scripts/BlurEffect.cs'
 'Assets/Scripts/CameraFollow.cs'
 'Assets/Scripts/Camera_Shake.cs'

@@ -17,6 +17,8 @@ TagManager:
   - globalUDP
   - CityCrack
   - NoSpawnZone
+  - LeaderboardStart
+  - Canvas
   layers:
   - Default
   - TransparentFX

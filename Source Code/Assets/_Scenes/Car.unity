@@ -3214,7 +3214,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 384612584}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15a02973d1ef5b5438c2c633124a6069, type: 3}
   m_Name: 
@@ -4284,7 +4284,7 @@ ParticleSystem:
   m_GameObject: {fileID: 515415104}
   serializedVersion: 5
   lengthInSec: 10
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -7415,7 +7415,7 @@ ParticleSystem:
   m_GameObject: {fileID: 598902413}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -12025,7 +12025,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0a95e535759af894e99d483d4ab0925c, type: 3}
     m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
@@ -15855,7 +15855,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1250788192}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -19973,7 +19973,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1436003723}
   serializedVersion: 5
   lengthInSec: 10
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -26814,7 +26814,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1919769455}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -29895,7 +29895,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0a95e535759af894e99d483d4ab0925c, type: 3}
     m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
