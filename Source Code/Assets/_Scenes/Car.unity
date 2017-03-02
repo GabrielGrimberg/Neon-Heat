@@ -1373,7 +1373,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 103763250}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30, y: 75, z: -171}
+  m_LocalPosition: {x: 30, y: 75, z: -242}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 384612585}
@@ -3105,9 +3105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f327e91f3f244ecbf4db15ff230fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPOS: {fileID: 103763250}
-  Bullet: {fileID: 1998490405128486, guid: 06c947e7c704b48d7ad646760f060834, type: 2}
-  bSpeed: 100
+  BulletPOS: {fileID: 1998490405128486, guid: 06c947e7c704b48d7ad646760f060834, type: 2}
+  Bullet: {fileID: 103763250}
+  bSpeed: 10000
   bulletObject: {fileID: 0}
 --- !u!114 &384612596
 MonoBehaviour:
@@ -4298,7 +4298,7 @@ ParticleSystem:
   m_GameObject: {fileID: 515415104}
   serializedVersion: 5
   lengthInSec: 10
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -7429,7 +7429,7 @@ ParticleSystem:
   m_GameObject: {fileID: 598902413}
   serializedVersion: 5
   lengthInSec: 5
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -15869,7 +15869,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1250788192}
   serializedVersion: 5
   lengthInSec: 5
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -20029,7 +20029,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1436003723}
   serializedVersion: 5
   lengthInSec: 10
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -20076,7 +20076,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 830578102
+  randomSeed: -1192222557
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -26870,7 +26870,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1919769455}
   serializedVersion: 5
   lengthInSec: 5
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1

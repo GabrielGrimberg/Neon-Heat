@@ -17,12 +17,13 @@ public class CarShooter : MonoBehaviour {
 			storeBullet = Instantiate(BulletPOS,BulletPOS.transform.position,BulletPOS.transform.rotation) as GameObject;
 
 			//Rotation correction.
-			storeBullet.transform.Rotate(Vector3.forward * 90);
+			//storeBullet.transform.Rotate(Vector3.forward * -1);
+
 
 			Rigidbody bullet;
 			bullet = storeBullet.GetComponent<Rigidbody>();
 
-			bullet.AddForce(transform.right * bSpeed);
+			bullet.AddForce(Vector3.back * bSpeed, ForceMode.VelocityChange);
 
 			Destroy(storeBullet, 5.0f); //Delete bullet after X seconds. 5 here.
 
