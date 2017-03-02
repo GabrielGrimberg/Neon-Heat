@@ -38,7 +38,9 @@ public class Player : MonoBehaviour {
 
     int score = 0;
 
-    bool desertMode = false;
+    public bool desertMode = false;
+
+    public GameObject desertPlane = null;
 
     // Use this for initialization
     void Start () {
@@ -176,13 +178,13 @@ public class Player : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         //Debug.Log("Triggered with " + other.tag);
 
-		udpSendRef.sendString ("crashed");
+		
 
         if ((other.tag == "Pillar" || other.tag == "Rocket") && !shield.onOff) {
             rb.AddRelativeForce(Vector3.forward * 2000, ForceMode.VelocityChange);
             Info.getCameraShake().AddShake(40, 0.2f);
 
-
+            udpSendRef.sendString("crashed");
 
             ICollidable collidable = other.GetComponent<ICollidable>();
             if (collidable != null) {
@@ -211,6 +213,10 @@ public class Player : MonoBehaviour {
 
         if (other.tag == "CityCrack") {
             StartDropDown();
+        }
+
+        if (other.tag == "DesertPlane") {
+            desertPlane = other.gameObject;
         }
     }
 

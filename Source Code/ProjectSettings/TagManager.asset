@@ -19,6 +19,7 @@ TagManager:
   - NoSpawnZone
   - LeaderboardStart
   - Canvas
+  - DesertPlane
   layers:
   - Default
   - TransparentFX
