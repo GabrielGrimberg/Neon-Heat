@@ -21,7 +21,7 @@ public class City_Duplicator : MonoBehaviour {
 
         float z = size.z;
         for (int i = 0; i < 100; i++) {
-            if (Random.Range(0, 3) == 1) {
+            if (Random.Range(0, 3) == 1 && i > 5) {
                 if (Random.Range(0, 2) == 1) {
                     cityEnd = Object.Instantiate(cityCrackLeft, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation).transform.position;
                 } else {

@@ -38,6 +38,8 @@ public class Player : MonoBehaviour {
 
     int score = 0;
 
+    bool desertMode = false;
+
     // Use this for initialization
     void Start () {
         shield = new Shield();
@@ -111,12 +113,12 @@ public class Player : MonoBehaviour {
 
 
 		//Check lane boundaries
-        if (transform.position.x < -3800) {
+        if (transform.position.x < -3800 && !desertMode) {
             transform.position = new Vector3(-3800, transform.position.y, transform.position.z);
             currentHorizontalSpeed = 0;
         }
 
-        if (transform.position.x > -630) {
+        if (transform.position.x > -630 && !desertMode) {
             transform.position = new Vector3(-630, transform.position.y, transform.position.z);
             currentHorizontalSpeed = 0;
         }
@@ -204,6 +206,7 @@ public class Player : MonoBehaviour {
             Vector3 teleportPosition = other.GetComponent<Portal>().connectionPortal.transform.position;
             teleportPosition.y = transform.position.y;
             transform.position = teleportPosition;
+            desertMode = true;
         }
 
         if (other.tag == "CityCrack") {
