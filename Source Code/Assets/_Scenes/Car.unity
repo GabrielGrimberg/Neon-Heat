@@ -12331,6 +12331,7 @@ GameObject:
   - component: {fileID: 855909773}
   - component: {fileID: 855909776}
   - component: {fileID: 855909777}
+  - component: {fileID: 855909778}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -12516,6 +12517,23 @@ MonoBehaviour:
   strengthX: 0.19
   strengthY: 0.19
   fishEyeShader: {fileID: 4800000, guid: 874ceab4425f64bccb1d14032f4452b1, type: 3}
+--- !u!95 &855909778
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 855909764}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 876e672d9f4dc7d43b1434d393d42183, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &859805084
 GameObject:
   m_ObjectHideFlags: 0
