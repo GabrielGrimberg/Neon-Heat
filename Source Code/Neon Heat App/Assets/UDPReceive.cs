@@ -24,6 +24,10 @@ public class UDPReceive : MonoBehaviour
     public static string lastReceivedUDPPacket = "";
     public string allReceivedUDPPackets = ""; // clean up this from time to time!
 
+    bool crash = false;
+    bool speedUp = false;
+    bool theme = true;
+    bool portal = false;
 
     
 
@@ -45,6 +49,35 @@ public class UDPReceive : MonoBehaviour
     {
 
         init();
+    }
+
+    void Update()
+    {
+        if (crash)
+        {
+            Handheld.Vibrate();
+            GameObject.Find("CrashSound").GetComponent<AudioSource>().Play();
+            crash = false;
+        }
+
+        if (speedUp)
+        {
+            Handheld.Vibrate();
+            GameObject.Find("SpeedupSound").GetComponent<AudioSource>().Play();
+            speedUp = false;
+        }
+
+        if (theme)
+        {
+            GameObject.Find("Theme").GetComponent<AudioSource>().Play();
+            theme = false;
+        }
+
+        if (portal)
+        {
+            GameObject.Find("PortalSound").GetComponent<AudioSource>().Play();
+            portal = false;
+        }
     }
 
     // OnGUI
@@ -96,15 +129,25 @@ public class UDPReceive : MonoBehaviour
 
                 string text = Encoding.UTF8.GetString(data);
 
-                if (text == "crashed"){
-                    Handheld.Vibrate();
+                if(text == "SpeedUpRing")
+                {
+                    speedUp = true;
                 }
 
-                if (text == "powerup") {
-                    AudioSource powerup = GetComponent<AudioSource>();
-                    powerup.Play();
+                if(text == "Wall")
+                {
+                    crash = true;
                 }
 
+                if(text == "Theme")
+                {
+                    theme = true;
+                }
+
+                if(text == "Portal")
+                {
+                    portal = true;
+                }
                
                 print(">> " + text);
 
