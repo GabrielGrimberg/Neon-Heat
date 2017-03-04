@@ -1,4 +1,4 @@
-![Neon Heat Logo](https://github.com/Majiick/Neon-Heat/blob/master/Design Doc/MainLogo.png)
+![Neon Heat Poster](https://github.com/Majiick/Neon-Heat/blob/master/Design%20Doc/NeonPoster.jpg)
 
 #### Team Members
 | Name       | GitHub Link      |
@@ -7,7 +7,8 @@
 | Gabriel Grimberg|https://github.com/GabrielGrimberg |
 | Evgeny Timoshin |https://github.com/EvgenyTimoshin  |
 | Daniel Vegera   |https://github.com/yungrazr        |
-| Abdul Ismail    |https://github.com/Abdul-Ismail    |
+| Abdul Ismail    |https://github.com/Abdul-Ismail    |
+
 #### Introduction
 A racing game that goes by the name of Neon Heat which is currently in development. This game will be powered by Unity3D engine and written in C#.
 
