@@ -32,21 +32,21 @@
 ## Objectives / Tasks (Stable Release)
 - [x] A device such as a phone to be used to control the car using the device's motion.
 - [x] A game mode that switches all the time.
-- [ ] Freeroam mode where you can move to the left or right as much as you want.
+- [x] Freeroam mode where you can move to the left or right as much as you want.
 - [x] Cops chasing the player.
-- [ ] Implement a losing state.
+- [x] Implement a losing state.
 - [x] A main menu where you can select to play and adjust settings such as turning off SFX, Music etc.
-- [ ] Re-skin everything such as the car, pillars, floor etc.
+- [x] Re-skin everything such as the car, pillars, floor etc.
 - [x] Sound effects.
-- [ ] Weather effect that switches every X amount of minutes.
 - [x] Car camera effects such as shaking, changing colour etc.
 
 ## Objectives / Tasks (Master Release)
 - [ ] Using the scoring system to unlock new cars, we will need a new variable to hold a scoring system and we will call it cash.
 - [ ] Upgrades to cars.
 - [ ] More cars in the game.
+- [ ] Weather effect that switches every X amount of minutes.
 - [ ] Camera viewing angles. So 1st person and 3rd person.
-- [x] Power ups to assist the player such as immunity to getting hit by the pillar, reroll option if you lose etc.
+- [ ] Power ups to assist the player such as immunity to getting hit by the pillar, reroll option if you lose etc.
 - [x] Leaderboard that holds the score, distance traveled and cash collected.
 - [ ] Multiplayer gameplay.
 
