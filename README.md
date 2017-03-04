@@ -22,14 +22,36 @@ the car.
 
 - Original sound tracks to be included along with some cool animations.
 
-- A thrilling gameplay that doesn't limit the user to continuously do one thing only, we will include a free roam mode where things
-get interesting.
+- A thrilling gameplay that doesn't limit the user to continuously do one thing only, we will include a free roam mode where things get interesting.
 
 #### Testing
-- To be updated...
+
+Tested on: iMac
+- Model: 21.5 Inch, Mid 2011
+- Processor: 2.5GHz Intel Core i5
+- Graphics: AMD Radeon HD 6750M 512MB
+
+Comments: The game ran smooth with no lag at all, tested on the highest screen resolution and highest graphics graphics quality.
+
+Tested on: MacBook Pro
+- Model: Retina, 13-inch, Early 2015
+- Processor: 2.7 GHz Intel Core i5
+- Graphics: Intel Iris Graphics 6100 1536 MB
+
+Comments: The same as the iMac, the game ran smoothly without any lag spikes.
+
+Tested on: XPS 13
+- Processor: 2.3GHz Intel Core i5-6200U
+- Graphics: Intel HD Graphics 520
+
+Comments: Instead of testing on the OS X this game was tested on the Windows platform and as usual no lag spikes occured, the game ran perfectly fine.
 
 #### Evaluation
-- To be updated...
+- Overall the team was extremely proud of the game that was made.
+- Everything works the way it should be.
+- The changing game-mode works fine without no bugs.
+- Our goal was met we followed our objectives and got them working.
+- We are also proud of the smart phone motion that is used to control the car.
 
 #### Key Features
 - A device such as a phone to be used to control the car using the device's motion.
