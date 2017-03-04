@@ -1,4 +1,5 @@
-![Neon Heat Poster](https://github.com/Majiick/Neon-Heat/blob/master/Design%20Doc/NeonPoster.jpg)
+## Video Trailer
+[![Video](https://github.com/Majiick/Neon-Heat/blob/master/Design%20Doc/NeonPoster.jpg)](https://www.youtube.com/watch?v=uykz5mCjV0w)
 
 #### Team Members
 | Name       | GitHub Link      |
