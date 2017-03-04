@@ -38,7 +38,7 @@ get interesting.
 - A main menu where you can select to play and adjust settings such as turning off SFX and Music.
 - Cool artwork and sound effects.
 - Car camera effects such as shaking and changing colours when hitting an obstacle.
-- Leaderboard that holds the distance traveled.
+- Leader-board that holds the distance travelled.
 
 #### How To Play
 - Select from the Main Menu, options that include Start, Leaderboard, Options and End.

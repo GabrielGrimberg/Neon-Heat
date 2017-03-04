@@ -1,6 +1,6 @@
-# BluRaii
+# Neon Heat
 
-# Design Document
+# Design Guide
 
 ## Team Members
 - Zan Smirnov

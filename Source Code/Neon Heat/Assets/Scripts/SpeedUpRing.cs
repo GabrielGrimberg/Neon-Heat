@@ -18,7 +18,7 @@ public class SpeedUpRing : MonoBehaviour, ICollidable {
 
         //offset = new Vector3(Random.Range(-1000, 1000), 0, Random.Range(-2000, -20000));
         offset = new Vector3(Random.Range(-1600, 1600), 0, Random.Range(-10000, -20000));
-        spawnPosition = new Vector3(City_Duplicator.cityStart.x, City_Duplicator.cityStart.y, player.transform.position.z) + offset;
+        spawnPosition = new Vector3(-2228, -60, player.transform.position.z) + offset;
 
         warningSign = Instantiate(Resources.Load("warning_sign"), Vector3.zero, Quaternion.identity) as GameObject;
 
@@ -31,7 +31,7 @@ public class SpeedUpRing : MonoBehaviour, ICollidable {
 	
 	// Update is called once per frame
 	void Update () {
-        spawnPosition = new Vector3(City_Duplicator.cityStart.x, City_Duplicator.cityStart.y, player.transform.position.z) + offset;
+        spawnPosition = new Vector3(-2228, -60, player.transform.position.z) + offset;
         warningSign.transform.position = spawnPosition;
 
         if (spawn) {

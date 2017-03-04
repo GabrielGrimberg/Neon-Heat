@@ -14,11 +14,15 @@ public class City_Duplicator : MonoBehaviour {
     public GameObject PortalDiskThing2;
 
     public GameObject cityPrefab;
+    public GameObject cityRightPrefab;
+    public GameObject cityLeftPrefab;
     Vector3 citySize;
 
     // Use this for initialization
     void Start () {
         cityPrefab = Resources.Load("The City4 (1)") as GameObject;
+        cityRightPrefab = Resources.Load("CityCrackLeft (2)") as GameObject;
+        cityLeftPrefab = Resources.Load("New City Crack Right") as GameObject;
         SpawnCities();
     }
 	
@@ -37,9 +41,9 @@ public class City_Duplicator : MonoBehaviour {
         for (int i = 0; i < 5; i++) {
             if (Random.Range(0, 3) == 1 && i > 5) {
                 if (Random.Range(0, 2) == 1) {
-                    cityEnd = Object.Instantiate(cityCrackLeft, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation).transform.position;
+                    cityEnd = Object.Instantiate(cityLeftPrefab, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation).transform.position;
                 } else {
-                    cityEnd = Object.Instantiate(cityCrackRight, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation).transform.position;
+                    cityEnd = Object.Instantiate(cityRightPrefab, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation).transform.position;
                 }
             } else {
                 endCity = Object.Instantiate(cityPrefab, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation);
@@ -58,12 +62,12 @@ public class City_Duplicator : MonoBehaviour {
         GameObject endCity = null;
 
         float z = size.z;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 50; i++) {
             if (Random.Range(0, 3) == 1 && i > 5) {
                 if (Random.Range(0, 2) == 1) {
-                    cityEnd = Object.Instantiate(cityCrackLeft, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation).transform.position;
+                    cityEnd = Object.Instantiate(cityLeftPrefab, new Vector3(location.x, location.y, z), Quaternion.identity).transform.position;
                 } else {
-                    cityEnd = Object.Instantiate(cityCrackRight, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation).transform.position;
+                    cityEnd = Object.Instantiate(cityRightPrefab, new Vector3(location.x, location.y, z), Quaternion.identity).transform.position;
                 }
             } else {
                 endCity = Object.Instantiate(cityPrefab, new Vector3(location.x, location.y, z), Quaternion.identity);

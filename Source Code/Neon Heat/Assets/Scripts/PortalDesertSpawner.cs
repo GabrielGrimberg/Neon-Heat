@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class PortalDesertSpawner : MonoBehaviour {
     public GameObject entrancePortal;
     public GameObject exitPortal;
-    Vector3 newEntracePortalPosition;
-    Vector3 newExitPortalPosition = Vector3.zero;
+    public Vector3 newEntracePortalPosition;
+    //public Vector3 newExitPortalPosition = Vector3.zero;
+    public Vector3 newExitPortalPosition = new Vector3(-2212, -128, 5277);
     Player player;
     GameObject playerGO;
     LineRenderer line;
@@ -36,10 +37,12 @@ public class PortalDesertSpawner : MonoBehaviour {
 
     public void EnterDesert() {
         if (cityToDesert) {
-            newEntracePortalPosition = exitPortal.transform.position + Vector3.back * Random.Range(100000 / 5, 200000 / 5) + Vector3.right * Random.Range(-100000.0f / 20, 100000.0f / 20);
+            newEntracePortalPosition = exitPortal.transform.position + Vector3.back * Random.Range(100000 * 5, 200000 * 5) + Vector3.right * Random.Range(-100000.0f / 2, 100000.0f / 2);
             Info.getCityDuplicator().DeleteCities();
+            Info.getPlayer().GetComponent<Obstacle_Spawner>().DeleteObstacles();
         }
-        newExitPortalPosition = Vector3.zero;
+        //newExitPortalPosition = Vector3.zero;
+        newExitPortalPosition = new Vector3(-2212, -128, 5277);
         cityToDesert = !cityToDesert;
 
         Invoke("ChangeEntrancePortalPosition", 2.0f);
@@ -47,7 +50,7 @@ public class PortalDesertSpawner : MonoBehaviour {
     }
 
     public void EnterCity() {
-        newEntracePortalPosition = Info.getCityDuplicator().SpawnCities(exitPortal.transform.position);
+        newEntracePortalPosition = Info.getCityDuplicator().SpawnCities(Vector3.zero);
         newExitPortalPosition = new Vector3(-76741, 0, 6393);
         /*
         GameObject temp = entrancePortal;
@@ -58,6 +61,12 @@ public class PortalDesertSpawner : MonoBehaviour {
         cityToDesert = !cityToDesert;
         Invoke("ChangeEntrancePortalPosition", 2.0f);
         Invoke("ChangeExitPortalPosition", 2.0f);
+
+        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Pillar");
+
+        foreach (GameObject obstacle in obstacles) {
+            Destroy(obstacle);
+        }
     }
 
     void ChangeEntrancePortalPosition() {

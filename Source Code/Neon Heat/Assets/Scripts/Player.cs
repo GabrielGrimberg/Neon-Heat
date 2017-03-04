@@ -43,6 +43,8 @@ public class Player : MonoBehaviour {
 
     public GameObject desertPlane = null;
 
+    PortalDesertSpawner portalDesertSpawner;
+
     // Use this for initialization
     void Start () {
         shield = new Shield();
@@ -56,6 +58,7 @@ public class Player : MonoBehaviour {
         bDoubleTap = new DoubleTap(KeyCode.D, 0.2f, DashRight);
 
         wheelSmoke = GameObject.FindGameObjectsWithTag("WheelSmoke");
+        portalDesertSpawner = gameObject.GetComponent<PortalDesertSpawner>();
     }
 	
 	// Update is called once per frame
@@ -70,6 +73,12 @@ public class Player : MonoBehaviour {
         if (dropDown) {
             DropDown();
             return;
+        }
+
+        if (desertMode && portalDesertSpawner.exitPortal != null) {
+            if (transform.position.z < portalDesertSpawner.newEntracePortalPosition.z - 1000) {
+                Destroy(gameObject);
+            }
         }
 
         score += (int)(Mathf.Abs(rb.velocity.z) * Time.deltaTime);
@@ -194,6 +203,7 @@ public class Player : MonoBehaviour {
 
 			Info.getDistortImageEffects().Quake();
             ObstacleExplosion.Explode(other.transform.position);
+            GameObject.Find("CrashSound").GetComponent<AudioSource>().Play();
         }
 
         if (other.tag == "SpeedUpRing") {
@@ -201,6 +211,7 @@ public class Player : MonoBehaviour {
             //Info.getCameraShake().AddShake(40, 0.2f);
             //Info.getDistortImageEffects().Quake();
             blur.Quake();
+            GameObject.Find("SpeedupSound").GetComponent<AudioSource>().Play();
         }
 
         if (other.tag == "Portal") {
@@ -223,10 +234,13 @@ public class Player : MonoBehaviour {
 
                 GetComponent<PortalDesertSpawner>().EnterCity();
             }
+
+            GameObject.Find("PortalSound").GetComponent<AudioSource>().Play();
         }
 
         if (other.tag == "CityCrack") {
             StartDropDown();
+            GameObject.Find("FadeOut").GetComponent<FadeOut>().StartFadeOut();
         }
 
         if (other.tag == "DesertPlane") {
