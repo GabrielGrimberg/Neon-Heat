@@ -13,7 +13,7 @@
 | Abdul Ismail    |https://github.com/Abdul-Ismail    |
 
 #### Introduction
-A racing game that goes by the name of Neon Heat which is currently in development. This game will be powered by Unity3D engine and written in C#.
+A racing game that goes by the name of Neon Heat which is in a stable release state. This game is powered by Unity3D engine and written in C#.
 
 This project is due to enter the Games Fleadh competition, the theme for this year is a Racing Game which is why we have decided to make an original Racing Game.
 
@@ -59,7 +59,6 @@ Comments: Instead of testing on the OS X this game was tested on the Windows pla
 #### Key Features
 - A device such as a phone to be used to control the car using the device's motion.
 - A game mode that switches via entering a portal.
-- Power-ups such as shooting obstacles and shield that prevents you from crashing.
 - Cops chasing you so you must maintain your speed to not lose.
 - A main menu where you can select to play and adjust settings such as turning off SFX and Music.
 - Cool artwork and sound effects.
@@ -75,6 +74,8 @@ Comments: Instead of testing on the OS X this game was tested on the Windows pla
 - The Leaderboard displays people's scores.
 - Options to enable or disable SFX or Music
 - End to quit the game. 
+- When dying you will be shown a game over screen.
+- You can select to play again, go back to the menu or to quit the game.
 
 #### Assets
 - Game Music - SFX & Sound by [Daniel Vegera](https://soundcloud.com/sport-smen)
