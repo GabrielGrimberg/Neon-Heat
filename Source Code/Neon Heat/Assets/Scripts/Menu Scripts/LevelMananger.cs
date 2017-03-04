@@ -10,5 +10,11 @@ public class LevelMananger : MonoBehaviour
 	{
 		SceneManager.LoadScene(newGame);
 	}
+
+	public void EndGame()
+	{
+		print("Quit is pressed");
+		Application.Quit();
+	}
 		
 }

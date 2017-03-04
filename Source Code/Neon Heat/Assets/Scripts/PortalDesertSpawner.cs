@@ -36,6 +36,7 @@ public class PortalDesertSpawner : MonoBehaviour {
     }
 
     public void EnterDesert() {
+        playerGO.GetComponent<PlaneSpawner>().ShowPlanes();
         if (cityToDesert) {
             newEntracePortalPosition = exitPortal.transform.position + Vector3.back * Random.Range(100000 * 5, 200000 * 5) + Vector3.right * Random.Range(-100000.0f / 2, 100000.0f / 2);
             Info.getCityDuplicator().DeleteCities();
@@ -50,6 +51,7 @@ public class PortalDesertSpawner : MonoBehaviour {
     }
 
     public void EnterCity() {
+        playerGO.GetComponent<PlaneSpawner>().HidePlanes();
         newEntracePortalPosition = Info.getCityDuplicator().SpawnCities(Vector3.zero);
         newExitPortalPosition = new Vector3(-76741, 0, 6393);
         /*

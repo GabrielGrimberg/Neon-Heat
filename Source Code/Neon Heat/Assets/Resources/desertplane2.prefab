@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 65494536437153460}
   m_Layer: 0
   m_Name: desertplane2
-  m_TagString: Untagged
+  m_TagString: DesertPlane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1669170531692018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -76741, y: -185, z: 0}
+  m_LocalPosition: {x: -39115, y: -36980, z: -37841.793}
   m_LocalScale: {x: 5, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}

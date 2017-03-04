@@ -37,4 +37,20 @@ public class PlaneSpawner : MonoBehaviour {
             }
         }
 	}
+
+    public void HidePlanes() {
+        GameObject[] planes = GameObject.FindGameObjectsWithTag("DesertPlane");
+
+        foreach (GameObject plane in planes) {
+            plane.GetComponent<MeshRenderer>().enabled = false;
+        }
+    }
+
+    public void ShowPlanes() {
+        GameObject[] planes = GameObject.FindGameObjectsWithTag("DesertPlane");
+
+        foreach (GameObject plane in planes) {
+            plane.GetComponent<MeshRenderer>().enabled = true;
+        }
+    }
 }

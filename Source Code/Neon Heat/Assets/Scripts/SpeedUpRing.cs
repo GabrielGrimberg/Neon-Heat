@@ -11,14 +11,25 @@ public class SpeedUpRing : MonoBehaviour, ICollidable {
     Vector3 finalRaiseAmount;
     Vector3 raiseAmount = Vector3.zero;
     Vector3 originalPosition;
+    Player playerScript;
 
     // Use this for initialization
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
+        playerScript = Info.getPlayer().GetComponent<Player>();
 
         //offset = new Vector3(Random.Range(-1000, 1000), 0, Random.Range(-2000, -20000));
-        offset = new Vector3(Random.Range(-1600, 1600), 0, Random.Range(-10000, -20000));
-        spawnPosition = new Vector3(-2228, -60, player.transform.position.z) + offset;
+        if (playerScript.desertMode) {
+            offset = new Vector3(Random.Range(-15000, 15000), 0, Random.Range(-10000, -70000));
+        } else {
+            offset = new Vector3(Random.Range(-1600, 1600), 0, Random.Range(-10000, -20000));
+        }
+
+        if (playerScript.desertMode) {
+            spawnPosition = player.transform.position + offset;
+        } else {
+            spawnPosition = new Vector3(-2228, -60, player.transform.position.z) + offset;
+        }
 
         warningSign = Instantiate(Resources.Load("warning_sign"), Vector3.zero, Quaternion.identity) as GameObject;
 
@@ -31,7 +42,11 @@ public class SpeedUpRing : MonoBehaviour, ICollidable {
 	
 	// Update is called once per frame
 	void Update () {
-        spawnPosition = new Vector3(-2228, -60, player.transform.position.z) + offset;
+        if (playerScript.desertMode) {
+            spawnPosition = player.transform.position + offset;
+        } else {
+            spawnPosition = new Vector3(-2228, -60, player.transform.position.z) + offset;
+        }
         warningSign.transform.position = spawnPosition;
 
         if (spawn) {

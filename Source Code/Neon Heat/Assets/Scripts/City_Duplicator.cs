@@ -39,7 +39,7 @@ public class City_Duplicator : MonoBehaviour {
 
         float z = size.z;
         for (int i = 0; i < 5; i++) {
-            if (Random.Range(0, 3) == 1 && i > 5) {
+            if (Random.Range(0, 3) == 1 && i > 20) {
                 if (Random.Range(0, 2) == 1) {
                     cityEnd = Object.Instantiate(cityLeftPrefab, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation).transform.position;
                 } else {
@@ -62,8 +62,8 @@ public class City_Duplicator : MonoBehaviour {
         GameObject endCity = null;
 
         float z = size.z;
-        for (int i = 0; i < 50; i++) {
-            if (Random.Range(0, 3) == 1 && i > 5) {
+        for (int i = 0; i < 100; i++) {
+            if (Random.Range(0, 3) == 1 && i > 20) {
                 if (Random.Range(0, 2) == 1) {
                     cityEnd = Object.Instantiate(cityLeftPrefab, new Vector3(location.x, location.y, z), Quaternion.identity).transform.position;
                 } else {

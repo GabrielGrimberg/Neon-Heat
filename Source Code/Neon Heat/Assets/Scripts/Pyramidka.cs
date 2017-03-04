@@ -13,9 +13,11 @@ public class Pyramidka : MonoBehaviour, ICollidable {
     Vector3 originalPosition;
     Vector3 bottomOffset;
     Player playerScript;
+    Obstacle_Spawner obstacleSpawner;
 
     // Use this for initialization
     void Start () {
+        obstacleSpawner = Info.getPlayer().GetComponent<Obstacle_Spawner>();
         //set scale
         playerScript = Info.getPlayer().GetComponent<Player>();
         float scale = Random.Range(1.0f, 3.0f);
@@ -26,9 +28,9 @@ public class Pyramidka : MonoBehaviour, ICollidable {
 
         //offset = new Vector3(Random.Range(-1000, 1000), 0, Random.Range(-2000, -20000));
         if (playerScript.desertMode) {
-            offset = new Vector3(Random.Range(-15000, 15000), 0, Random.Range(-10000, -70000));
+            offset = new Vector3(Random.Range(-15000, 15000), 0, Random.Range(-15000, -70000) * obstacleSpawner.difficutlyModifier);
         } else {
-            offset = new Vector3(Random.Range(-1600, 1600), 0, Random.Range(-10000, -20000));
+            offset = new Vector3(Random.Range(-1600, 1600), 0, Random.Range(-10000, -20000) * obstacleSpawner.difficutlyModifier);
         }
 
         if (playerScript.desertMode) {

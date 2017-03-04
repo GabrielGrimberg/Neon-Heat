@@ -22,6 +22,7 @@ public class Player : MonoBehaviour {
     public Text tSpeed;
     public Text tScore;
     public Text tPortalDistance;
+    public Text tPoliceSpeed;
 
     DoubleTap aDoubleTap;
     DoubleTap bDoubleTap;
@@ -45,6 +46,12 @@ public class Player : MonoBehaviour {
 
     PortalDesertSpawner portalDesertSpawner;
 
+    float deathStart;
+    bool readyToDie = false;
+    float deathTresholdCity = 3700;
+    float deathTresholdDesert = 6000;
+    float deathModifier = 1;
+
     // Use this for initialization
     void Start () {
         shield = new Shield();
@@ -59,11 +66,13 @@ public class Player : MonoBehaviour {
 
         wheelSmoke = GameObject.FindGameObjectsWithTag("WheelSmoke");
         portalDesertSpawner = gameObject.GetComponent<PortalDesertSpawner>();
+        Invoke("ReadyToDie", 5.0f);
     }
 	
 	// Update is called once per frame
     //Split update into smaller methods later.
 	void Update () {
+        deathModifier += Time.deltaTime / 100;
         aDoubleTap.Update();
         bDoubleTap.Update();
         shield.Update();
@@ -75,6 +84,20 @@ public class Player : MonoBehaviour {
             return;
         }
 
+        //death
+        if (Mathf.Abs(rb.velocity.z) < deathTresholdCity * deathModifier && desertMode == false) {
+
+        } else if (Mathf.Abs(rb.velocity.z) < deathTresholdDesert * deathModifier && desertMode == true)  {
+            
+        } else {
+            deathStart = Time.time;
+        }
+
+        if (deathStart + 2 < Time.time && readyToDie) {
+            GameObject.Find("FadeOut").GetComponent<FadeOut>().StartFadeOut();
+        }
+
+        //If behind portal
         if (desertMode && portalDesertSpawner.exitPortal != null) {
             if (transform.position.z < portalDesertSpawner.newEntracePortalPosition.z - 1000) {
                 Destroy(gameObject);
@@ -150,7 +173,7 @@ public class Player : MonoBehaviour {
         if (rb.velocity.z > minimumSpeed) { //Remember, the minimum speed is negative.
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, minimumSpeed);
         }
-
+        //Debug.Log(currentHorizontalSpeed);
         //Wheel smoke
         if (Mathf.Abs(currentHorizontalSpeed) > 1000) {
             foreach (GameObject wheel in wheelSmoke) {
@@ -167,8 +190,8 @@ public class Player : MonoBehaviour {
 
 	float CalculateBonusHorizontalSpeed() { //Change this to take in 2 ranges and a multiplier later.
 		float tVel = Mathf.Abs(rb.velocity.z);
-		Mathf.Clamp(tVel, 8000, 15000);
-		return Helper.Remap(tVel, 8000, 15000, 0, 5000);
+        tVel = Mathf.Clamp(tVel, 8000, 20000);
+		return Helper.Remap(tVel, 8000, 15000, -800, 1800);
 	}
 
 	void _UpdateText() {
@@ -183,6 +206,14 @@ public class Player : MonoBehaviour {
         if (tScore != null) {
             tScore.text = "Score: " + (score / 500).ToString() + "m";
         }
+
+        if (tPoliceSpeed != null) {
+            if (desertMode) {
+                tPoliceSpeed.text = "Police Speed: " + Math.Round((deathTresholdDesert / 500.0f * deathModifier), 0, MidpointRounding.AwayFromZero).ToString() + "m/s";
+            } else {
+                tPoliceSpeed.text = "Police Speed: " + Math.Round((deathTresholdCity / 500.0f * deathModifier), 0, MidpointRounding.AwayFromZero).ToString() + "m/s";
+            }
+        }
 	}
 
     void OnTriggerEnter(Collider other) {
@@ -191,10 +222,13 @@ public class Player : MonoBehaviour {
 		
 
         if ((other.tag == "Pillar" || other.tag == "Rocket") && !shield.onOff) {
-            rb.AddRelativeForce(Vector3.forward * 2000, ForceMode.VelocityChange);
-            Info.getCameraShake().AddShake(40, 0.2f);
+            Vector3 velocityChange = Vector3.forward * 2000;
+            velocityChange.z += Mathf.Abs((rb.velocity.z / 10));
 
-            udpSendRef.sendString("crashed");
+            rb.AddRelativeForce(velocityChange, ForceMode.VelocityChange);
+            Info.getCameraShake().AddShake(40, 0.2f);
+			////////////////////////////////////////
+            udpSendRef.sendString("CrashedWall");
 
             ICollidable collidable = other.GetComponent<ICollidable>();
             if (collidable != null) {
@@ -212,6 +246,8 @@ public class Player : MonoBehaviour {
             //Info.getDistortImageEffects().Quake();
             blur.Quake();
             GameObject.Find("SpeedupSound").GetComponent<AudioSource>().Play();
+			/////////////////////////////////////
+			udpSendRef.sendString ("SpeedUpRing");
         }
 
         if (other.tag == "Portal") {
@@ -233,6 +269,10 @@ public class Player : MonoBehaviour {
                 desertMode = false;
 
                 GetComponent<PortalDesertSpawner>().EnterCity();
+            }
+
+            if (rb.velocity.z > -6500 * deathModifier) {
+                rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -6500 * deathModifier);
             }
 
             GameObject.Find("PortalSound").GetComponent<AudioSource>().Play();
@@ -270,5 +310,9 @@ public class Player : MonoBehaviour {
         Info.getFollowPlayer().birdsEyeView = true;
 
         Invoke("DieExplode", 2.0f);
+    }
+
+    void ReadyToDie() {
+        readyToDie = true;
     }
 }

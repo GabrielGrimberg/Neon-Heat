@@ -12,6 +12,7 @@ public class Pop_Up_Pillar : MonoBehaviour, ICollidable {
     Vector3 raiseAmount = Vector3.zero;
     Vector3 originalPosition;
     Player playerScript;
+    Obstacle_Spawner obstacleSpawner;
 
     // Use this for initialization
     void Start () {
@@ -21,14 +22,15 @@ public class Pop_Up_Pillar : MonoBehaviour, ICollidable {
         transform.localScale = new Vector3(scale, 1, 1);
 
         player = GameObject.FindGameObjectWithTag("Player");
+        obstacleSpawner = Info.getPlayer().GetComponent<Obstacle_Spawner>();
 
         //offset = new Vector3(Random.Range(-1000, 1000), 0, Random.Range(-2000, -20000));
-        
+
 
         if (playerScript.desertMode) {
-            offset = new Vector3(Random.Range(-15000, 15000), 0, Random.Range(-10000, -70000));
+            offset = new Vector3(Random.Range(-15000, 15000), 0, Random.Range(-15000, -70000) * obstacleSpawner.difficutlyModifier);
         } else {
-            offset = new Vector3(Random.Range(-1600, 1600), 0, Random.Range(-10000, -20000));
+            offset = new Vector3(Random.Range(-1600, 1600), 0, Random.Range(-10000, -20000) * obstacleSpawner.difficutlyModifier);
         }
 
         if (playerScript.desertMode) {

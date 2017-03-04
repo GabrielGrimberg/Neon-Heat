@@ -21,7 +21,7 @@ public class Speedometer {
 	
 	// Update is called once per frame
 	public void Update () {
-        float speedometerRatio = Helper.Remap(playerRb.velocity.z, -1500, -25000, 0, 1.0f);
+        float speedometerRatio = Helper.Remap(playerRb.velocity.z, -1500, -30000, 0, 1.0f);
 
         float noise = 1 - Random.Range(-0.025f, 0.025f);
         mask.sizeDelta = new Vector2(originalSize.x * speedometerRatio * noise, mask.sizeDelta.y);
