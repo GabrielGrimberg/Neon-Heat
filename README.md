@@ -1,3 +1,5 @@
+# Neon Heat
+
 ## Video Trailer
 [![Video](https://github.com/Majiick/Neon-Heat/blob/master/Design%20Doc/NeonPoster.jpg)](https://www.youtube.com/watch?v=uykz5mCjV0w)
 
@@ -73,9 +75,6 @@ Comments: Instead of testing on the OS X this game was tested on the Windows pla
 - The Leaderboard displays people's scores.
 - Options to enable or disable SFX or Music
 - End to quit the game. 
-
-#### Video Game Trailer
-- To be updated...
 
 #### Assets
 - Game Music - SFX & Sound by [Daniel Vegera](https://soundcloud.com/sport-smen)
