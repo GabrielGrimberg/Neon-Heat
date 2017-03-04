@@ -1,0 +1,87 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 750 Ti (ID=0x1380)
+    Vendor:   NVIDIA
+    VRAM:     2016 MB
+    Driver:   21.21.13.7653
+Default GameObject Tag: CameraShake already registered
+ 
+(Filename:  Line: 90)
+
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Ecoste\Desktop\temp neon heat\Neon-Heat\Binary\Neon-Heat_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Ecoste\Desktop\temp neon heat\Neon-Heat\Binary\Neon-Heat_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Ecoste\Desktop\temp neon heat\Neon-Heat\Binary\Neon-Heat_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Ecoste\Desktop\temp neon heat\Neon-Heat\Binary\Neon-Heat_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Ecoste\Desktop\temp neon heat\Neon-Heat\Binary\Neon-Heat_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Ecoste\Desktop\temp neon heat\Neon-Heat\Binary\Neon-Heat_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Ecoste\Desktop\temp neon heat\Neon-Heat\Binary\Neon-Heat_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Ecoste\Desktop\temp neon heat\Neon-Heat\Binary\Neon-Heat_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Ecoste\Desktop\temp neon heat\Neon-Heat\Binary\Neon-Heat_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Ecoste\Desktop\temp neon heat\Neon-Heat\Binary\Neon-Heat_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Ecoste\Desktop\temp neon heat\Neon-Heat\Binary\Neon-Heat_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Ecoste\Desktop\temp neon heat\Neon-Heat\Binary\Neon-Heat_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\Ecoste\Desktop\temp neon heat\Neon-Heat\Binary\Neon-Heat_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Ecoste\Desktop\temp neon heat\Neon-Heat\Binary\Neon-Heat_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.036 seconds
+Platform assembly: C:\Users\Ecoste\Desktop\temp neon heat\Neon-Heat\Binary\Neon-Heat_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Ecoste\Desktop\temp neon heat\Neon-Heat\Binary\Neon-Heat_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.240205 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 10c8 -> priority: 1 
+  Thread -> id: 2f90 -> priority: 1 
+The class named 'Info' is not derived from MonoBehaviour or ScriptableObject!
+ 
+(Filename:  Line: 1526)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.540709 ms
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 1974.
+Total: 4.041869 ms (FindLiveObjects: 0.075886 ms CreateObjectMapping: 0.052759 ms MarkObjects: 0.307160 ms  DeleteObjects: 3.605701 ms)
+
+UDPSend.init()
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Sending to 127.0.0.1 : 15000
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Test-Sending to this Port: nc -u 127.0.0.1  15000
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CRASHHHHH
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+System.NullReferenceException: Object reference not set to an instance of an object
+  at UDPSend.sendString (System.String message) [0x00000] in <filename unknown>:0 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CRASHHHHH
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+System.NullReferenceException: Object reference not set to an instance of an object
+  at UDPSend.sendString (System.String message) [0x00000] in <filename unknown>:0 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CRASHHHHH
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+System.NullReferenceException: Object reference not set to an instance of an object
+  at UDPSend.sendString (System.String message) [0x00000] in <filename unknown>:0 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+

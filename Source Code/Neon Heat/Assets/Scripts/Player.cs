@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 //Player class
 public class Player : MonoBehaviour {
@@ -38,7 +39,7 @@ public class Player : MonoBehaviour {
 
     bool dropDown = false;
 
-    int score = 0;
+    public int score = 0;
 
     public bool desertMode = false;
 
@@ -72,6 +73,10 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
     //Split update into smaller methods later.
 	void Update () {
+        if (Input.GetKey(KeyCode.Escape)) {
+            SceneManager.LoadScene("MainMenu");
+        }
+
         deathModifier += Time.deltaTime / 100;
         aDoubleTap.Update();
         bDoubleTap.Update();
@@ -112,11 +117,11 @@ public class Player : MonoBehaviour {
 
         //Accelerate the car initally.
         if(rb.velocity.z > -4000) {
-            rb.AddRelativeForce(Vector3.forward * -1000);
+            rb.AddRelativeForce(Vector3.forward * -1000 * Time.deltaTime * 50);
         }
 
         //Accelerate car continuously;
-        rb.AddRelativeForce(Vector3.forward * -100);
+        rb.AddRelativeForce(Vector3.forward * -100 * Time.deltaTime * 50);
 
 		//Calculate bonus horizontal speed.
 		bonusHorizontalSpeed = CalculateBonusHorizontalSpeed();

@@ -30,6 +30,7 @@ public class FadeOut : MonoBehaviour {
         }
 
         if (alpha >= 1) {
+            PlayerPrefs.SetInt("High Score", Info.getPlayer().GetComponent<Player>().score / 500);
             SceneManager.LoadScene("DeathScene");
         }
     }

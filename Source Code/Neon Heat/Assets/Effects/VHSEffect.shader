@@ -1,6 +1,4 @@
-﻿//http://www.shaderslab.com/index.php?post/VHS-tape-effect
-
-Shader "Hidden/VHSeffect"
+﻿Shader "Hidden/VHSeffect"
 {
 	Properties
 	{

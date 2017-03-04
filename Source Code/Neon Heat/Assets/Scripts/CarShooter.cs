@@ -8,7 +8,7 @@ public class CarShooter : MonoBehaviour {
 	public GameObject bulletObject;//What we're going to hit
 
 	void Update () {
-
+        /*
 		if (Input.GetMouseButtonDown(0)) {//If left mouse button clicked.
 
 			GameObject storeBullet;//Reference for bullet we are going to create.
@@ -29,7 +29,7 @@ public class CarShooter : MonoBehaviour {
 
 			print("Working");
 		}
-			
+		*/
 	}
 
 	void OnTriggerEnter(Collider otherObject) {
