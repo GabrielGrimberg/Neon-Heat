@@ -37,4 +37,8 @@ public class Info {
 	public static UDPSend getUDPSend(){
 		return GameObject.Find("globalUdpSend").GetComponent<UDPSend> ();
 	}
+
+    public static City_Duplicator getCityDuplicator() {
+        return GameObject.Find("CityDuplicator").GetComponent<City_Duplicator>();
+    }
 }

@@ -21,6 +21,7 @@ public class Player : MonoBehaviour {
     public Text hSpeed;
     public Text tSpeed;
     public Text tScore;
+    public Text tPortalDistance;
 
     DoubleTap aDoubleTap;
     DoubleTap bDoubleTap;
@@ -203,14 +204,25 @@ public class Player : MonoBehaviour {
         }
 
         if (other.tag == "Portal") {
-            Info.getFollowPlayer().GoStraight(rb.velocity.z);
+            if (!desertMode) {
+                Info.getFollowPlayer().GoStraight(rb.velocity.z);
 
-            Vector3 teleportPosition = other.GetComponent<Portal>().connectionPortal.transform.position;
-            teleportPosition.y = transform.position.y;
-            transform.position = teleportPosition;
-            desertMode = true;
+                Vector3 teleportPosition = other.GetComponent<Portal>().connectionPortal.transform.position;
+                teleportPosition.y = transform.position.y;
+                transform.position = teleportPosition;
+                desertMode = true;
 
-            GetComponent<PortalDesertSpawner>().EnterDesert();
+                GetComponent<PortalDesertSpawner>().EnterDesert();
+            } else {
+                Info.getFollowPlayer().GoStraight(rb.velocity.z);
+
+                Vector3 teleportPosition = other.GetComponent<Portal>().connectionPortal.transform.position;
+                teleportPosition.y = transform.position.y;
+                transform.position = teleportPosition;
+                desertMode = false;
+
+                GetComponent<PortalDesertSpawner>().EnterCity();
+            }
         }
 
         if (other.tag == "CityCrack") {

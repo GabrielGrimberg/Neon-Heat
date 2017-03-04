@@ -13,14 +13,28 @@ public class City_Duplicator : MonoBehaviour {
     public GameObject PortalDiskThing1;
     public GameObject PortalDiskThing2;
 
+    public GameObject cityPrefab;
+    Vector3 citySize;
+
     // Use this for initialization
     void Start () {
+        cityPrefab = Resources.Load("The City4 (1)") as GameObject;
+        SpawnCities();
+    }
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+    public void SpawnCities() {
         cityStart = city.transform.Find("SouthEnd").transform.position;
         Vector3 size = city.GetComponent<BoxCollider>().bounds.size;
+        citySize = size;
         GameObject endCity = null;
 
         float z = size.z;
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 5; i++) {
             if (Random.Range(0, 3) == 1 && i > 5) {
                 if (Random.Range(0, 2) == 1) {
                     cityEnd = Object.Instantiate(cityCrackLeft, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation).transform.position;
@@ -28,18 +42,45 @@ public class City_Duplicator : MonoBehaviour {
                     cityEnd = Object.Instantiate(cityCrackRight, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation).transform.position;
                 }
             } else {
-                endCity = Object.Instantiate(city, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation);
+                endCity = Object.Instantiate(cityPrefab, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation);
                 cityEnd = endCity.transform.position;
             }
-                
+
             z -= size.z;
         }
 
         PortalDiskThing1.transform.position = endCity.transform.Find("SouthEnd").transform.position;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public Vector3 SpawnCities(Vector3 location) {
+        cityStart = location;
+        Vector3 size = citySize;
+        GameObject endCity = null;
+
+        float z = size.z;
+        for (int i = 0; i < 5; i++) {
+            if (Random.Range(0, 3) == 1 && i > 5) {
+                if (Random.Range(0, 2) == 1) {
+                    cityEnd = Object.Instantiate(cityCrackLeft, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation).transform.position;
+                } else {
+                    cityEnd = Object.Instantiate(cityCrackRight, new Vector3(city.transform.position.x, city.transform.position.y, z), city.transform.rotation).transform.position;
+                }
+            } else {
+                endCity = Object.Instantiate(cityPrefab, new Vector3(location.x, location.y, z), Quaternion.identity);
+                cityEnd = endCity.transform.position;
+            }
+
+            z -= size.z;
+        }
+
+        return endCity.transform.Find("SouthEnd").transform.position;
+    }
+
+    public void DeleteCities() {
+        GameObject[] cities = GameObject.FindGameObjectsWithTag("CityCrack");
+
+        foreach (GameObject city in cities) {
+            Destroy(city);
+        }
+    }
 }
