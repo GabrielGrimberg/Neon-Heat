@@ -15,7 +15,9 @@
 #### Introduction
 A racing game that goes by the name of Neon Heat which is in a stable release state. This game is powered by Unity3D engine and written in C#.
 
-This project is due to enter the Games Fleadh competition, the theme for this year is a Racing Game which is why we have decided to make an original Racing Game.
+This project has entered the Games Fleadh 2017 competition, the theme for this year is a Racing Game which is why we have decided to make an original Racing Game.
+
+Neon Heat has received an award for the best in Original Digital Art at Games Fleadh 2017.
 
 #### Idea/Goal
 - Unlike other racing games the team have decided to come up with something special, our goal is to use motion instead of keyboard buttons to control the car. However we took into account that not everyone would want to use their phone so we have also enabled the keyboard to control
